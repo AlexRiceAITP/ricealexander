@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Animated Pattern</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  background: linear-gradient(135deg, transparent 25%, rgba(255,0,0,0.5) 25%, rgba(255,0,0,0.5) 75%, transparent 75%), linear-gradient(45deg, transparent 25%, rgba(0,0,255,0.5) 25%, rgba(0,0,255,0.5) 75%, transparent 75%), #FFF;  background-size: 100px 100px;}
+</style>
+</head>
+<body>
+<script> 
+var seed = [-1, 0, 0, -2, 0, 0];
+rain();
+
+function rain() {
+  var pos = window.getComputedStyle(document.body).getPropertyValue('background-position').split(/[\s,]+/);
+  var bgpos = "";
+  
+  for (var i = 0; i < pos.length; i++) {
+    var posi = parseInt(pos[i]) + seed[i];
+	if ((2 * Math.floor(i / 2) != i) && (i != pos.length - 1)) bgpos += posi + "px, "
+	else bgpos += posi + "px ";}
+
+  document.body.style.backgroundPosition = bgpos;
+  setTimeout(() => rain(), 50);
+}
+</script>
+</body>
+</html>
