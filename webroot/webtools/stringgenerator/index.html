@@ -4,6 +4,7 @@
 <title>String Generator</title>
 <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet" type="text/css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- tool to replace need for https://www.random.org/strings/ -->
 <style>
 article {
    margin: 0 auto;
@@ -29,7 +30,16 @@ button:hover {
    opacity: 1;}
 
 h2 {
-   margin: 30px 0 -5px 10px;}
+   margin: 30px 10px -5px 10px;}
+
+h2:before {
+   border: 2px solid #37a0f3;
+   border-radius: 4px;
+   box-sizing: border-box;
+   content: '';
+   display: inline-block;
+   margin: 0 5px 0 0;
+   height:19px; width:4px;}
 
 hr {
    border: 1px solid #dcdcdc;}
@@ -115,7 +125,7 @@ table input[type="text"] {
 
 <article>
 
-<h2>Random String Generator</h2>
+<h2>Random&nbsp;String&nbsp;Generator</h2>
 <div id='error'></div>
 <section id='form'>
 <table>
