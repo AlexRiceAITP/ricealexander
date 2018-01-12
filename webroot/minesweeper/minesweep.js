@@ -1,13 +1,14 @@
 function x(s) {
-  if (document.querySelectorAll(s).length > 1) return document.querySelectorAll(s);
-  else return document.querySelector(s);
+  let q = document.querySelectorAll(s);
+  if (q.length != 1) return q;
+  else return q[0];
 }
 
 // object to store board information
 var ms = {
-    h: 13,
-    w: 13,
-    m: 26
+  h: 13,
+  w: 13,
+  m: 26
 }
   
 // board array and mines array
