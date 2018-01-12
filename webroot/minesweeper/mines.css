@@ -47,7 +47,7 @@ footer {
 
 	
 #board .mine {  /* https://www.flaticon.com/free-icon/mine_487029 */
-   background-image: url(icon-mine.svg);
+   background-image: url(icons/icon-mine.svg);
    background-color: #e8eef1;
    background-position: 1px 0;
    background-repeat: no-repeat;
@@ -60,7 +60,7 @@ footer {
      border-color: #fe6e6e;}
    
 #board .flag {  /* https://www.flaticon.com/free-icon/maps-and-flags_252025 */
-   background-image: url(icon-flag.svg);
+   background-image: url(icons/icon-flag.svg);
    background-repeat: no-repeat;
    background-size: 25px 25px;}
 
@@ -95,7 +95,7 @@ footer {
    color: #70227d;}
 
 #flagct {
-   background-image: url(icon-flagbg.svg);
+   background-image: url(icons/icon-flagbg.svg);
    background-repeat: no-repeat;
    background-size: 27px 27px;
    border-radius: 15px;
