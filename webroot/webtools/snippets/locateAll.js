@@ -3,6 +3,7 @@ var fragment = "e"
 var text = "Hello World, and welcome to the universe!";
 
 console.log(locateAll(fragment, text));
+// output: [1, 18, 23, 30, 36, 39]
 
 function locateAll(f,t) {
   var pos = [], i = 0;
