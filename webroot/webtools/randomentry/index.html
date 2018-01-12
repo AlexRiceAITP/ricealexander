@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>String Generator</title>
+<link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- tool to replace need for https://www.random.org/strings/ -->
+<style>
+article {
+   margin: 0 auto;
+   max-width:1000px;}
+
+body {
+   color: #444;
+   font-family: 'Muli';
+   margin: 0;}
+
+button {
+   background-color: #2196F3;
+   border: none;
+   border-radius: 4px;
+   color: #fff;
+   font-size: 1em;
+   margin: 10px 0;
+   opacity: .9;
+   padding: 5px 10px;
+   text-align: center;}
+
+button:hover {
+   opacity: 1;}
+
+h2 {
+   margin: 30px 10px -5px 10px;}
+
+h2:before {
+   border: 2px solid #37a0f3;
+   border-radius: 4px;
+   box-sizing: border-box;
+   content: '';
+   display: inline-block;
+   margin: 0 5px 0 0;
+   height:19px; width:4px;}
+
+hr {
+   border: 1px solid #dcdcdc;}
+
+input, label, #output {
+   font-family: monospace;}
+
+input[type="text"] {
+   border: 1px solid #dcdcdc;
+   box-sizing: border-box;
+   color: #827f7f;
+   padding: 5px 10px;
+   width:183px;}
+
+label {
+   background-color: #fff;
+   border: 1px solid #dcdcdc;
+   border-radius: 20px;
+   color: #827f7f;
+   display: table-cell;
+   padding: 5px 10px;}
+
+label input {
+   display: inline;
+   margin: 0 5px 0 0;
+   vertical-align: middle;}
+
+table {
+   box-sizing: border-box;
+   width:183px;}
+
+table input[type="text"] {
+   width:90px;}
+
+#error {
+   color: #f16a6a;
+   font-size: 0.8em;
+   margin: 3px 10px;
+   min-height:16px;}
+
+#form {
+   background-color: #f7f7f7;
+   border: 1px solid #dcdcdc;
+   border-radius: 10px;
+   box-sizing: border-box;
+   float: left;
+   margin: 0 10px;
+   padding: 10px 35px;
+   height:420px; width:300px;}
+
+#form p {
+   margin: .7em 0 .3em 0;}
+
+#output {
+   background-color: #f5fbff;
+   border: 1px solid #37a0f3;
+   border-top:none; border-bottom:none;
+   border-radius: 10px;
+   box-sizing: border-box;
+   color: #226ba4;
+   float: left;
+   font-family: monospace;
+   line-height: 1.5em;   
+   margin-right: 10px;
+   overflow: hidden;
+   overflow-wrap: break-word;
+   padding: 10px 15px;   
+   height:420px; width:calc(100% - 330px);}
+   
+@media (max-width:600px) {
+   #form {
+      float: none;
+      width: initial;}
+
+   #output {
+      float: none;
+      margin: 10px;
+      width:initial;}
+}
+</style>
+</head>
+<body>
+
+<article>
+
+<h2>Random&nbsp;String&nbsp;Generator</h2>
+<div id='error'></div>
+<section id='form'>
+<table>
+<tr>
+<td>
+<p>#Strings:</p>
+<input type="text" name="count" value="10">
+</td>
+<td>
+<p>Length:</p>
+<input type="text" name="length" value="4">
+</td>
+</tr>
+</table>
+
+<hr>
+
+<p>Allow Characters:</p>
+<label><input type="checkbox" checked="checked" name="num"/>0-9</label>
+<label><input type="checkbox" checked="checked" name="lwr"/>a-z</label>
+<label><input type="checkbox" name="upr"/>A-Z</label>
+
+<p>Require Characters:</p>
+<label><input type="checkbox" name="reqnum"/>0-9</label>
+<label><input type="checkbox" name="reqlwr"/>a-z</label>
+<label><input type="checkbox" name="requpr"/>A-Z</label>
+
+<hr>
+
+<p>Leading Characters:</p>
+<input type="text" name="charstart">
+<p>Trailing Characters:</p>
+
+<input type="text" name="charend">
+
+<button>Generate Strings</button>
+
+</section>
+
+<div id='output'></div>
+</article>
+<script>
+const lwr = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+const upr = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+const num = ['1','2','3','4','5','6','7','8','9','0'];
+
+function generateStrings() {
+  var str = {
+    cnt: x('input[name="count"]').value,
+    len: x('input[name="length"]').value,
+    
+    num: x('input[name="num"]').checked,
+    upr: x('input[name="upr"]').checked,
+    lwr: x('input[name="lwr"]').checked,
+    
+    rqn: x('input[name="reqnum"]').checked,
+    rqu: x('input[name="requpr"]').checked,
+    rql: x('input[name="reqlwr"]').checked,
+    
+    chs: x('input[name="charstart"]').value,
+    che: x('input[name="charend"]').value,
+    
+    index: 0
+  }
+
+  
+  /*// Start Input Validation //*/
+  error('');
+  var err = false;
+ 
+  if (Number.isInteger(parseInt(str.cnt))) {
+    str.cnt = parseInt(str.cnt);
+    if (str.cnt <= 0) { err = true; error('number of strings must be greater than 0');}
+  } else { err = true; error('number of strings must be a number');}
+
+  if (Number.isInteger(parseInt(str.len))) {
+    str.len = parseInt(str.len);
+    if (str.len <= 0) { err = true; error('length of each string must be greater than 0');}
+  } else { err = true; error('length of each string must be a number');}
+  
+  if ((str.lwr == false) && (str.upr == false) && (str.num == false)) {
+    err = true; error('you must allow some character type');}
+  
+  if (((str.lwr == false) && (str.rql == true)) || ((str.upr == false) && (str.rqu == true)) || ((str.num == false) && (str.rqn == true))) {
+    err = true; error('a character type cannot be required if it\'s not allowed');}
+
+  if (err == true) return;
+  
+  str.index = str.len - str.chs.length - str.che.length;
+  if (str.index <= 0) { error('the string length must be larger than the starting and ending characters'); return;}
+
+  var temp = str.index;
+  if (str.rql == true) temp--;
+  if (str.rqn == true) temp--;
+  if (str.rqu == true) temp--;
+  if (temp < 0) { error('there is not enough space to require each of those characters'); return;}
+
+  /*// End Input Validation //*/
+  
+
+  var queue = [];
+  if (str.lwr) var queue = queue.concat(lwr);
+  if (str.upr) var queue = queue.concat(upr);
+  if (str.num) var queue = queue.concat(num);
+
+  write('');
+  for (i = 0; i < str.cnt; i++) makeString();
+
+
+  function makeString() {
+    var snippet = '', err = false;
+    for (j = 0; j < str.index; j++)
+      snippet += queue[Math.floor((Math.random() * queue.length))];
+
+    snippet = str.chs + snippet + str.che;
+    if ((str.rql) && (!contains(lwr,snippet))) err = true;
+    if ((str.rqu) && (!contains(upr,snippet))) err = true;
+    if ((str.rqn) && (!contains(num,snippet))) err = true;
+    
+    if (err === true) makeString()
+    else write(snippet);
+  }
+  
+  function contains(a,t) {
+    var c = t.split(''), flag = [];
+    for(k = 0; k < c.length; k++) if (a.includes(c[k])) flag[k] = true;
+    return (flag.includes(true));
+  }
+
+}
+
+
+x('button').addEventListener("click", generateStrings);
+
+// helper functions
+function x(s) {
+  if (document.querySelectorAll(s).length > 1)
+   return document.querySelectorAll(s);
+  else return document.querySelector(s);
+}
+
+function error(t) {
+  if (t == '') x('#error').innerHTML = '';
+  else x('#error').innerHTML += t + '<br>';
+}
+
+function write(t) {
+  if (t == '') x('#output').innerHTML = '';
+  else x('#output').innerHTML += t + '<br>';
+}
+
+</script>
+</body>
+</html>

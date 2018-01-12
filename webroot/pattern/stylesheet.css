@@ -1,0 +1,88 @@
+/** PATTERN PRACTICE
+  *  All patterns Copyright Alexander Rice 2014-2017
+  *  All of these are my original creations
+  *
+  *  Other Online Pattern galleries
+  *  41: http://lea.verou.me/css3patterns/
+  *  55: http://www.standardista.com/cssgradients/
+  *  15: http://css3pie.com/demos/gradient-patterns/
+  *  31: http://enjoycss.com/gallery/gradient_patterns
+  *  63: My patterns page is the largest collection of patterns by a single author
+  *  134: http://heliosanctus.wikia.com/wiki/CSS_Patterns
+  * last counted 1/5/2018
+  **/
+
+body {
+   color: #475156;
+   background-color: #f7f7f7;
+   font-family: 'Muli', Helvetica, sans-serif;
+   margin: 0;}
+
+h1 {
+   background-color: #FFF;
+   border-bottom: 2px solid #fea66e;
+   margin: 0;
+   padding: 10px 20px;}
+
+nav {
+   background: linear-gradient(90deg, #efefef 15px, #f4f4f4 15px, #f4f4f4 30px);
+   background-size: 30px 30px;
+   color: #c0ccd2;
+   padding: 4px 16px;}
+
+nav a {
+   color: #6e94a7;
+   text-decoration: none;}
+
+nav a:hover {
+   color: #ffba8f;}
+
+section {
+   border-bottom: 1px solid #efefef;
+   margin: 0 auto;
+   max-width: 1500px;
+   padding: 0 20px 5px 20px;}
+
+  
+  
+#blank {
+   background-color: #FFF;}
+
+.banner {
+   height:175px; width:100%;}
+
+.bigtile {
+   display: inline-block;
+   height:350px; width:350px; /* fallback */ width: calc(50% - 12px);}
+
+.copy {
+   background-color: #fea66e;
+   border: none;
+   color: #f7f7f7;
+   cursor: pointer;
+   display: none;
+   font-family: monospace;
+   font-size: 15px;
+   padding: .5em 1em;
+   position: absolute;
+   top:0; right:0;}
+
+.copybox {
+   background: none;
+   color: transparent;
+   font-size: 0;
+   padding: 0;
+   position: fixed;
+   top:50%;
+   height:1px; width:1px;}
+
+.pattern {
+   position: relative;
+   margin: 4px;}
+
+.pattern:hover > .copy, .pattern:focus > .copy {
+   display: block;}
+
+.tile {
+   display: inline-block;
+   height:175px; width:175px;}

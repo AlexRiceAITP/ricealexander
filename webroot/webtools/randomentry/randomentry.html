@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Random Entry</title>
+<style>
+
+textarea {
+    width: 250px;
+    height: 300px;
+    float: left;
+    border: 1px solid #99cff9;
+    margin: 0 12px 0 0;
+    border-radius: 5px;
+}
+
+input[type="text"].short {
+width: 27px;
+    height: 17px;
+    padding: 2px;
+    text-align: center;
+    margin: 0}
+
+
+article {
+   margin: 0 auto;
+   max-width:1000px;}
+
+body {
+   color: #444;
+   font-family: 'Muli';
+   margin: 0;}
+
+button {
+   background-color: #2196F3;
+   border: none;
+   border-radius: 4px;
+   color: #fff;
+   display: block;
+   font-size: 1em;
+   margin: 0 auto;
+   opacity: .9;
+   padding: 5px 10px;
+   text-align: center;}
+
+button:hover {
+   opacity: 1;}
+
+h2 {
+   margin: 30px 10px -5px 10px;}
+
+h2:before {
+   border: 2px solid #37a0f3;
+   border-radius: 4px;
+   box-sizing: border-box;
+   content: '';
+   display: inline-block;
+   margin: 0 5px 0 0;
+   height:19px; width:4px;}
+
+hr {
+   border: 1px solid #dcdcdc;}
+
+input, label, #output {
+   font-family: monospace;}
+
+input[type="text"] {
+   border: 1px solid #dcdcdc;
+   box-sizing: border-box;
+   color: #827f7f;
+   padding: 5px 10px;
+   width:183px;}
+
+label {
+   background-color: #fff;
+   border: 1px solid #dcdcdc;
+   border-radius: 20px;
+   color: #827f7f;
+   display: inline-block;
+   margin: 2px -1px;
+   padding: 5px 10px;}
+
+label input {
+   display: inline;
+   margin: 0 5px 0 0;
+   vertical-align: middle;}
+
+table {
+   box-sizing: border-box;
+   width:183px;}
+
+table input[type="text"] {
+   width:90px;}
+
+#form {
+    background-color: #f7f7f7;
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    float: left;
+    margin: 0 10px;
+    padding: 15px 20px;
+    height: 340px;
+    width: 100%;
+    max-width: 600px;
+}
+
+#form p {
+   margin: .7em 0 .3em 0;}
+
+#output {
+   background-color: #f5fbff;
+   border: 1px solid #37a0f3;
+   border-top:none; border-bottom:none;
+   border-radius: 10px;
+   box-sizing: border-box;
+   color: #226ba4;
+   float: left;
+   font-family: monospace;
+   line-height: 1.5em;   
+   margin-right: 10px;
+   overflow: hidden;
+   overflow-wrap: break-word;
+   padding: 10px 15px;   
+   height:420px; width:calc(100% - 330px);}
+   
+@media (max-width:600px) {
+   #form {
+      float: none;
+      width: initial;}
+
+   #output {
+      float: none;
+      margin: 10px;
+      width:initial;}
+}
+</style>
+</head>
+<body>
+
+<article>
+<h2>Choose a random item from a list</h2>
+<div id='error'></div>
+<section id='form'>
+<textarea></textarea>
+
+<p>How are the list items separated?</p>
+<label><input type="radio" name="dlim" checked="true"/>new lines</label>
+<label><input type="radio" name="dlim"/>commas</label>
+<label><input type="radio" name="dlim"/>custom character <input type="text" class="short" name="custdlim"></label>
+
+<p>How many should be chosen?</p>
+<input type="text" name="count" value="1">
+
+<hr>
+<button>Let's Go!</button>
+</section>
+</article>
+
+<script>
+function x(s) {
+  if (document.querySelectorAll(s).length > 1)
+   return document.querySelectorAll(s);
+  else return document.querySelector(s);
+}
+
+function chooseItems() {
+  var set = {
+    dlm: "",
+	txa: x('textarea').value,
+	cnt: x('input[name="count"]').value	
+  }
+  
+  if (x('input[name="dlim"]')[0].checked) set.dlm = "\n";
+  if (x('input[name="dlim"]')[1].checked) set.dlm = ",";
+  if (x('input[name="dlim"]')[2].checked) set.dlm = x('input[name="custdlim"]').value;
+  
+  let txtarray = set.txa.split(set.dlm);
+
+  console.log(txtarray);
+  
+  // validation
+  if (set.dlm == '') return;
+  if (txtarray.length < set.cnt) return;
+  
+
+}
+
+x('button').addEventListener("click", chooseItems);
+
+// helper functions
+
+</script>
+</body>
+</html>

@@ -17,10 +17,14 @@ function rain() {
   var pos = window.getComputedStyle(document.body).getPropertyValue('background-position').split(/[\s,]+/);
   var bgpos = "";
   
+  console.log(pos);
+  
   for (var i = 0; i < pos.length; i++) {
     var posi = parseInt(pos[i]) + seed[i];
 	if ((2 * Math.floor(i / 2) != i) && (i != pos.length - 1)) bgpos += posi + "px, "
 	else bgpos += posi + "px ";}
+	
+	console.log(bgpos);
 
   document.body.style.backgroundPosition = bgpos;
   setTimeout(() => rain(), 50);
