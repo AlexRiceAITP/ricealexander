@@ -17,8 +17,7 @@ section {
 
 #gamearea {
    margin: 0 auto;
-   width: 391px;
-}
+   width:391px;}
 
 #desc {
    display: flex;}
@@ -185,12 +184,18 @@ input.invalid {
    margin: 5px 10px 0 0;}
 
 .desc-txt:first-child {
-    margin-right: 10px;
-}
+   margin-right: 10px;}
+
 .desc-txt:last-child {
-    margin-left: 10px;
-}
+   margin-left: 10px;}
 
 .desc-txt {
-    flex-basis: 50%;
+   flex-basis: 50%;}
+
+
+@media (max-width:800px) {
+  #desc {
+     display: block;}
+  #desc .desc-txt {
+     margin: 0;}
 }
