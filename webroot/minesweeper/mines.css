@@ -1,7 +1,8 @@
 body {
    color: #475156;
    font-family: 'Muli', Helvetica, sans-serif;
-   margin: 0;}
+   margin: 0;
+   min-width:550px;}
 
 h1 {
    border-bottom: 2px solid #fea66e;
