@@ -1,0 +1,22 @@
+body {
+    background-color: #15151a;
+    color: #bbb;
+    font-family: 'Raleway', monospace;
+    margin: 0;
+    min-width: 800px;
+}
+#container {
+    padding: 40px 40px 10px 40px;
+}
+
+textarea, input {
+   background-color: #21222c;
+   border: none;
+   color: #999;
+   font-family: monospace;
+   outline: none;
+   padding: 5px;}
+
+textarea {
+   height:500px; width:100%;
+   resize: none;}
