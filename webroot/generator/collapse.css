@@ -1,0 +1,22 @@
+#hli-collapse .hidden {
+   display: none;}
+
+#hli-collapse .active {
+   background-color: #0b4c74;}
+
+.hli-collapse {
+   background-color: #1e1e27;}
+
+.hli-collapse_title {
+   background-color: #0d3b5a;
+   cursor: pointer;
+   font-size: 20px;
+   padding: 10px 15px;
+   transition: .4s;}
+
+.hli-collapse_title:hover {
+   background-color: #0b4c74;}
+
+.hli-collapse_content {
+   margin:0;
+   padding: 15px 25px 30px 25px;}

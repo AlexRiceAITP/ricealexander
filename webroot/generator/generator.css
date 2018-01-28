@@ -1,0 +1,166 @@
+input[type="color"] {
+   background-color: #2b2c38;
+   float:left;
+   margin: 0 3px;
+   height:44px; width:40px;}
+
+input[type="color"]:hover {
+   filter: brightness(1.2);}
+
+label {
+   background-color: #2b2c38;
+   display: block;
+   line-height: 44px;
+   height:44px;}
+
+.gen-collapse {
+   width:600px;}
+   
+   
+/** SELECT OPTION
+  *  These styles configure a "radio-button hack" using labels and associated input fields.
+  *  The CSS configures the physical radio button into a large transparent block situated
+     above each item.
+  *  As each option is clicked, the associated label underneath is styled.
+  *  This results in a list of options, in which all options are clearly visible and only
+     one may be selected.
+  **/
+
+  
+h3.subhead {
+    margin: 20px 0 10px 0;
+}
+
+
+.selectoption div {
+    background: #5f6a71;
+    transition: .2s;
+    padding: 7px 18px;
+    box-shadow: inset 1px -7px #00000014;
+    border-radius: 13px;
+    width: 113px;
+    font-size: 13px;
+    line-height: 13px;
+    margin: 4px 0;
+}
+
+.selectoption div:hover {
+   background: #41647f;
+   cursor: pointer;}
+
+.selectoption input[type="radio"] {
+   position: absolute;
+   visibility: hidden;}
+
+.selectoption input[type="radio"]:checked + div {
+   background: #0d3b5a;
+   cursor: default;}
+
+.selectoption label {
+   background: initial;
+   height: auto;}
+
+
+/* Preview Window */
+#chat-module .cm-avatar, #chat-module .cm-chat, #chat-module .cm-chatbody, #chat-module .cm-chatheader, #chat-module .cm-chatheader-rail, #chat-module .cm-message {
+   border-color: #ccc;
+   box-sizing: border-box;}
+
+.cm-chatwindow {
+   background-color: #666;
+   background-size: cover;
+   color: #333;
+   float: right;
+   font-size:10px;
+   position: relative;
+   height:26em; width:40em;}
+
+.cm-chatheader {
+   background-color: #eee;
+   background-size: cover;
+   border: .1em solid;
+   border-radius: 3px 3px 0 0;
+   position: absolute;
+   top:1em; right:1em; left:1em;
+   height:2em; width:38em;}
+
+.cm-chatheader-rail {
+   border-left: .1em solid;
+   position: absolute;
+   top:0; right:0;
+   width:8.1em;}
+
+.cm-chatbody {
+   background-color: #eee;
+   background-position: 0 -24px;
+   background-size: cover;
+   border: .1em solid;
+   border-radius: 0 0 3px 3px;
+   position: absolute;
+   top:3.5em; right:1em; bottom:1em; left:1em;
+   width:38em;}
+
+.cm-chat {
+   border-right: .1em solid;
+   padding-left: 2.5em;
+   position: absolute;
+   top:0; right:8em; bottom:2.6em; left:0;}
+
+.cm-you {
+   background-color: #ddd;
+   margin-left: -2.5em;
+   padding: .2em 0 0 2.5em;}
+
+.cm-write {
+   position: absolute;
+   right:8em; bottom:.5em; left:.5em;
+   height:2em;}
+
+.cm-message {
+   background-color: #fff;
+   border: .1em solid;
+   position: absolute;
+   right:0; left:2em;
+   height:2em;}
+
+.cm-rail {
+   position: absolute;
+   top:0; right:0; bottom:0;
+   width:8em;}
+
+.cm-active {
+   background-color: #ddd;
+   margin: .25em .1em;
+   padding-bottom: .5em;
+   text-align: center;}
+
+.cm-link {
+   color: #5792d9;}
+
+.cm-avatar {
+   background-color: black;
+   border: .1em solid;
+   display: inline-block;
+   height:1.5em; width:1.5em;}
+
+.cm-size1 {
+   margin: .1em .25em;}
+
+.cm-size2 {
+   position: absolute;
+   left:.25em;
+   height:1.7em; width:1.7em;}
+
+.cm-size3 {
+   position: absolute;
+   left:-.25em;
+   height:2em; width:2em;}
+
+.cm-blue {
+   background-color: #8a5fcb;}
+
+.cm-green {
+   background-color: #5fcb90;}
+
+.cm-red {
+   background-color: #cb5f5f;}
