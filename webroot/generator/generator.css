@@ -97,6 +97,7 @@ h3.subhead {
    width:38em;}
 
 .cm-chat {
+   background-size: cover;
    border-right: .1em solid;
    padding-left: 2.5em;
    position: absolute;

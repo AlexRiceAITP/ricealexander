@@ -130,6 +130,13 @@ function updateModule(name, value) {
 	    x('.cm-chatbody').style.backgroundImage = '';
 	  }
       break;
+    case "cchatbg":
+	  if (value) {
+	    x('.cm-chat').style.backgroundImage = 'url('+value+')';
+	  } else {
+	    x('.cm-chat').style.backgroundImage = '';
+	  }
+      break;
     case "rchatwindow":
       if (value == 0) x('.cm-chatheader').style.borderRadius = '3px 3px 0 0';
       if (value == 1) x('.cm-chatheader').style.borderRadius = '0';
@@ -189,7 +196,7 @@ function generate() {
 	rchd: radioValue('rchatwindow'),
 	rcwn: radioValue('rwikipage'),
 	rtxa: radioValue('rtextarea'),
-	ravt: radioValue('ravatar')
+	ravt: radioValue('ravatars')
 	
 	// Common Changes
 	
@@ -226,6 +233,16 @@ function generate() {
 #ChatHeader .wordmark, #UserStatsMenu .label, #UserStatsMenu svg, .ChatWindow a {\n   /* link color */\n   color: '+ gen.clnk +';}\n\n\n\
 ';
 
+// backgrounds
+if (gen.bcbk)
+  csscode += '.ChatWindow {\n   background: url('+ gen.bibk +');\nbackground-size: cover;}\n\n';
+if (gen.bcft) {
+  csscode += '#ChatHeader {\n   background: url('+ gen.bift +');\nbackground-size: cover;}\n\n';
+  csscode += '.ChatWindow #WikiaPage {\n   background: url('+ gen.bift +');\nbackground-size: cover;\nbackground-position: 0 -40px;}\n\n';
+}
+if (gen.bcch)
+  csscode += '#WikiaPage .Chat {\n   background: url('+ gen.bich +');\nbackground-size: cover;}\n\n';
+
   // round effects
   csscode += '#ChatHeader {\n   border-radius: ';
   if (gen.rchd == 0) csscode += '5px 5px 0 0';
@@ -247,13 +264,15 @@ function generate() {
   if (gen.rtxa == 2) csscode += '21px';
   if (gen.rtxa == 3) csscode += '0 21px 21px 0';
   csscode += ';}\n\n';
-  if (gen.rtxa == 3) csscode += '#Write img {\n   border-radius: 0 21px 21px 0;}\n\n';
+  if (gen.rtxa == 3) csscode += '#Write img {\n   border-radius: 21px 0 0 21px;}\n\n';
 
   csscode += '.Write img, .Chat .avatar, .User img, #UserStatsMenu .info img {\n   border-radius: ';
   if (gen.ravt == 0) csscode += '0';
   if (gen.ravt == 1) csscode += '5px';
   if (gen.ravt == 2) csscode += '21px';
   csscode += ';}\n\n';
+  
+  x('#output').innerHTML = csscode;
   
   
 //console.log(csscode);
