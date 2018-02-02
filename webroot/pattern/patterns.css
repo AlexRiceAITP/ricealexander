@@ -53,11 +53,11 @@
    background-size: 8px 8px, 12px 12px, 4px 12px, 4px 4px;}
 
 #glass-dichromatic {
-   background: radial-gradient(rgba(0, 0, 0, 0.3) 23px, #000, transparent 25px), radial-gradient(rgba(0, 100, 255, 0.3) 23px, #000, transparent 25px) 0 25px, radial-gradient(rgba(255, 0, 200, 0.3) 23px, #000, transparent 25px) 25px 0, radial-gradient(rgba(0, 0, 0, 0.5) 23px, #000, transparent 25px) 25px 25px, #FFF;
+   background: radial-gradient(rgba(255,255,255,0.2) 25px, transparent 26px), radial-gradient(rgba(69,255,250,0.25) 25px, transparent 26px) 0 25px, radial-gradient(rgba(150,209,243,0.6) 25px, transparent 26px) 25px 0, radial-gradient(rgb(67,114,173) 25px, transparent 26px) 25px 25px, #3599ba
    background-size: 50px 50px;}
 
 #glass-stained {
-   background: radial-gradient(rgba(0, 0, 0, 0.5) 23px, #000, transparent 25px), radial-gradient(rgba(0, 0, 0, 0.3) 23px, #000, transparent 25px) 25px 25px, linear-gradient(45deg, transparent 35px, #000, transparent 37px), linear-gradient(135deg, transparent 35px, #000, transparent 37px), #00FF8B;
+   background: radial-gradient(rgba(250, 239, 166, 0.5) 23px, #faefa6, transparent 25px), radial-gradient(rgba(244, 174, 81, 0.5) 23px, #e3a02b, transparent 25px) 25px 25px, linear-gradient(45deg, transparent 35px, #f4ae51, transparent 37px), linear-gradient(135deg, transparent 35px, #f4ae51, transparent 37px), #f2e4ad
    background-size: 50px 50px;}
 
 #glimmer {
