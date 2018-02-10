@@ -1,6 +1,5 @@
 <?php  // executes when the submit button is pushed
-  if(isset($_POST['content']))
-  {
+  if(isset($_POST['content'])) {
     $file = fopen('index.txt', "w") or die("Unable to open file!");
     $content = $_POST['content'];
     fwrite($file, $content);
@@ -8,8 +7,10 @@
   }
 
 // loads form with an action for the proper page
-echo '<form action=".?action=edit" method="post">
-<textarea name="content">';
+echo '
+<section class="modal_overlay">
+<form action=".?action=edit" method="post" class="modal">
+<textarea>';
 
 // loads the current file
 $file = fopen('index.txt',"r");
@@ -18,7 +19,11 @@ fclose($file);
 
 echo '
 </textarea>
-<input type="submit" value="Save" class="button">
-<a href=".">Return</a>
-</form>';
+<div class="modal_rail">
+<input type="submit" value="Save" class="modal_button button-save">
+<a href="." class="modal_button button-return">Return</a>
+</div>
+</form>
+</section>
+';
 ?>
