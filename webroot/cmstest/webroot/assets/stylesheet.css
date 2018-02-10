@@ -146,12 +146,19 @@ footer {
     position: fixed;
     background: rgba(23, 27, 31, 0.6);
     top: 0;
+	display: flex;
     right: 0;
     bottom: 0;
     left: 0;
     z-index: 1;
 }
 
+.modal{
+width: 100%;
+    max-width: 700px;
+    height: 350px;
+    margin: auto;
+	}
 .modal_button {
    border: none;
    box-sizing: border-box;
@@ -174,9 +181,26 @@ footer {
 
 .modal textarea {
     width: 100%;
-    max-width: 700px;
-    height: auto;
-    min-height: 350px;
+    height: 100%;
+}
+.modal_title {
+	
+    color: grey;
+    background: #171b1f;
+    margin: 0;
+    border-top: 5px solid #e74c3c;
+    padding: 20px 15px;
+    font-family: sans-serif;
+}
+.directory {
+    width: 575px;
+    overflow: hidden;
+    display: inline-block;
+    white-space: nowrap;
+    color: white;
+    direction: rtl;
+    line-height: 17px;
+    text-overflow: ellipsis;
 }
 
 .modal_rail {

@@ -10,6 +10,7 @@
 echo '
 <section class="modal_overlay">
 <form action=".?action=edit" method="post" class="modal">
+<h1>Editing <span class="directory">'.getcwd().'</span></h1>
 <textarea>';
 
 // loads the current file
