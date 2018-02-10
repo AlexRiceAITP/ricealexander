@@ -143,22 +143,48 @@ footer {
 }
 
 .modal_overlay {
-    position: fixed;
-    background: rgba(23, 27, 31, 0.6);
-    top: 0;
-	display: flex;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-}
+   background: repeating-linear-gradient(135deg, rgba(23,27,31,0.8), rgba(23,27,31,0.8) 35px, rgba(32,37,42,0.8) 35px, rgba(32,37,42,0.8) 70px);
+   display: flex;
+   position: fixed;
+   top:0; right:0; bottom:0; left:0;
+   z-index: 1;}
 
-.modal{
-width: 100%;
-    max-width: 700px;
-    height: 350px;
-    margin: auto;
-	}
+.modal {
+   margin: auto;
+   height: 350px;
+   width:100%; max-width:700px;}
+
+.modal_title {
+   background: #171b1f;
+   border: 1px solid #424951;
+   border-bottom: 3px solid #e74c3c;
+   color: #707b86;
+   font-family: sans-serif;
+   margin: 0;
+   padding: 20px 15px;}
+
+.mt_directory {
+   color: white;
+   direction: rtl;
+   display: inline-block;
+   font-size: 17px;
+   margin-bottom: -3px;
+   overflow: hidden;
+   text-align: left;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   width:575px;}
+
+.modal textarea {
+   height:100%; width:100%;}
+
+.modal_rail {
+   display: flex;
+   justify-content: flex-end;
+   margin-top: -40px;
+   text-align: right;
+   width:100%; max-width:700px;}
+
 .modal_button {
    border: none;
    box-sizing: border-box;
@@ -170,52 +196,16 @@ width: 100%;
    line-height: 40px;
    padding: 0 20px;
    text-decoration: none;
-   height: 40px;
-}
+   height:40px;}
+
 .modal_button:hover {
-   opacity:.8;
-}
+   opacity:0.8;}
 
 .modal .button-save {
-    background: #e74c3c;
-}
+   background: #e74c3c;}
+
 .modal .button-return {
-    background: #171b1f;
-}
-
-.modal textarea {
-    width: 100%;
-    height: 100%;
-}
-.modal_title {
-    color: #707b86;
-    background: #171b1f;
-    margin: 0;
-    border-top: 5px solid #e74c3c;
-    padding: 20px 15px;
-    font-family: sans-serif;
-}
-.directory {
-width: 575px;
-    overflow: hidden;
-    display: inline-block;
-    white-space: nowrap;
-    color: white;
-    font-size: 17px;
-    text-align: left;
-    margin-bottom: -3px;
-    direction: rtl;
-    text-overflow: ellipsis;
-}
-
-.modal_rail {
-	width: 100%;
-    max-width: 700px;
-    text-align: right;
-	display: flex;
-	justify-content: flex-end;
-    margin-top: -40px;
-}
+   background: #171b1f;}
 
 @media (max-width: 800px) {
   nav li {

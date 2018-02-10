@@ -1,16 +1,10 @@
 <?php  // executes when the submit button is pushed
-  if(isset($_POST['content'])) {
-    $file = fopen('index.txt', "w") or die("Unable to open file!");
-    $content = $_POST['content'];
-    fwrite($file, $content);
-    fclose($file);
-  }
 
 // loads form with an action for the proper page
 echo '
 <section class="modal_overlay">
-<form action=".?action=edit" method="post" class="modal">
-<h1 class="modal_title">Editing <span class="directory">'.getcwd().'</span></h1>
+<form action=".?action=submit" method="post" class="modal">
+<h1 class="modal_title">Editing <span class="mt_directory">'.getcwd().'</span></h1>
 <textarea name="content">';
 
 // loads the current file
