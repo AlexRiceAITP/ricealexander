@@ -10,16 +10,15 @@
 echo '
 <section class="modal_overlay">
 <form action=".?action=edit" method="post" class="modal">
-<h1>Editing <span class="directory">'.getcwd().'</span></h1>
-<textarea>';
+<h1 class="modal_title">Editing <span class="directory">'.getcwd().'</span></h1>
+<textarea name="content">';
 
 // loads the current file
 $file = fopen('index.txt',"r");
 while(! feof($file)) { echo fgets($file); }
 fclose($file);
 
-echo '
-</textarea>
+echo '</textarea>
 <div class="modal_rail">
 <input type="submit" value="Save" class="modal_button button-save">
 <a href="." class="modal_button button-return">Return</a>

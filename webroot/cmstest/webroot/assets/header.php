@@ -1,7 +1,9 @@
 <?php
 // Detect an action
 if (isset($_GET['action']) && $_GET['action'] == 'edit')
-  include '../assets/fn-EDIT.php';
+  include $_SERVER['DOCUMENT_ROOT'].'/assets/fn-EDIT.php';
+/*else if (isset($_GET['action']) && $_GET['action'] == 'submit')
+  include $_SERVER['DOCUMENT_ROOT'].'/assets/fn-SUBMIT.php';*/
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,3 +1,3 @@
-<?php include '../assets/header.php';?>
+<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';?>
 <?php include 'index.txt';?>
-<?php include '../assets/footer.php';?>
+<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/footer.php';?>
