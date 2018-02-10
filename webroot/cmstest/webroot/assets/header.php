@@ -1,3 +1,8 @@
+<?php
+// Detect an action
+if (isset($_GET['action']) && $_GET['action'] == 'edit')
+  include '../assets/fn-EDIT.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,4 +30,6 @@
         <li><a href="/archives/">Archives</a></li>
       </ul>
     </nav>
+    <a href=".?action=edit">EDIT</a>
+	</form>
   </header>
