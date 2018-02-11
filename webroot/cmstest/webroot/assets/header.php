@@ -8,11 +8,12 @@ else if (isset($_GET['action']) && $_GET['action'] == 'submit')
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Writing - Head 2 Hand</title>
+  <title><?php echo ucfirst(basename(getcwd())).' - Head 2 Hand Magazine'; ?></title>
   <meta charset="utf-8">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="stylesheet" href="/assets/stylesheet.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Mukta+Mahee" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
  
