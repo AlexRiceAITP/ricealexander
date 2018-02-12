@@ -1,25 +1,61 @@
 <?php
   include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
-  if(isset($_POST['submission']))
-  {
-	$title = "gnocci";
-	$path = $_SERVER['DOCUMENT_ROOT'].'/submissions/'.$title.'/';
+  
+  $subTitle = filter_input(INPUT_POST, 'title');
+  $subAuth = filter_input(INPUT_POST, 'author');
+  $subType = filter_input(INPUT_POST, 'type');
+
+  $subFile = '';
+  date_default_timezone_set("America/Chicago");
+  $subDate = date("m-d-Y H:i:s");
+
+  $error = "";
+
+  // VALIDATE
+  
+  
+  ///  create a directory for the current semester if there isn't one
+  if (date('n') < 6) $semester = "Spring ".date("Y");
+  else $semester = "Fall ".date("Y");
+  $pathYear = $_SERVER['DOCUMENT_ROOT'].'/submissions/'.$semester.'/';
+
+  if (!file_exists($pathYear)) mkdir($pathYear);
+  
+  
+  if ($subTitle == null) {
+    $error = "title field is required<br>";
+  } else {
+	
+	///  submission title should be lowercase with underscores in place of spaces
+	///  create a path to a store the new file
+    $pathTitle = str_replace(' ','_', strtolower($subTitle));	
+    $subPath = $pathYear.$pathTitle.'/';
+
+	if (file_exists($subPath))
+      $error = "a submission already exists with that title";
+  }
+  echo $error;
+  /*
+  if(isset($_POST['submission'])){
+
+	
 
 	// create a directory
-	mkdir($path);
+	mkdir($subPath);
 	
 	// create a .txt file with submission content
-    $indexTXT = fopen($path.'index.txt', "w");
+    $indexTXT = fopen($subPath.'index.txt', "w");
     $contentTXT = $_POST['submission'];
     fwrite($indexTXT, $contentTXT);
     fclose($indexTXT);
 	
 	// create a .php file that users will access
-    $indexPHP = fopen($path.'/index.php', "w");
+    $indexPHP = fopen($subPath.'/index.php', "w");
     $contentPHP = "<?php\ninclude \$_SERVER['DOCUMENT_ROOT'].'/assets/header.php';\ninclude 'index.txt';\ninclude \$_SERVER['DOCUMENT_ROOT'].'/assets/footer.php';\n?>";
     fwrite($indexPHP, $contentPHP);
     fclose($indexPHP);
-  }
+	
+  }*/
 ?>
 <h2>Upload</h2>
 <form action="." method="post">
