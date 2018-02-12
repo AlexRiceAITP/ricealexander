@@ -9,11 +9,7 @@
   date_default_timezone_set("America/Chicago");
   $subDate = date("m-d-Y H:i:s");
 
-  $error = "";
 
-  // VALIDATE
-  
-  
   ///  create a directory for the current semester if there isn't one
   if (date('n') < 6) $semester = "Spring ".date("Y");
   else $semester = "Fall ".date("Y");
@@ -21,6 +17,8 @@
 
   if (!file_exists($pathYear)) mkdir($pathYear);
   
+  // VALIDATE
+  $error = "";
   
   if ($subTitle == null) {
     $error = "title field is required<br>";
