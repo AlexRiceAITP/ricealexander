@@ -1,42 +1,46 @@
 <?php
   include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
   
-  $subTitle = filter_input(INPUT_POST, 'title');
-  $subAuth = filter_input(INPUT_POST, 'author');
-  $subType = filter_input(INPUT_POST, 'type');
-
-  $subFile = '';
-  date_default_timezone_set("America/Chicago");
-  $subDate = date("m-d-Y H:i:s");
-
-
-  ///  create a directory for the current semester if there isn't one
-  if (date('n') < 6) $semester = "Spring ".date("Y");
-  else $semester = "Fall ".date("Y");
-  $pathYear = $_SERVER['DOCUMENT_ROOT'].'/submissions/'.$semester.'/';
-
-  if (!file_exists($pathYear)) mkdir($pathYear);
-
-  // VALIDATE
-  $error = "";
   
-  if ($subTitle == null)
-	$error .= "title field is required<br>";
-  else {
+  if(isset($_POST['submission'])){
+  
+    $subTitle = filter_input(INPUT_POST, 'title');
+    $subAuth = filter_input(INPUT_POST, 'author');
+    $subType = filter_input(INPUT_POST, 'subtype');
+
+    $subFile = '';
+    date_default_timezone_set("America/Chicago");
+    $subDate = date("m-d-Y H:i:s");
+
+
+    ///  create a directory for the current semester if there isn't one
+    if (date('n') < 6) $semester = "Spring ".date("Y");
+    else $semester = "Fall ".date("Y");
+    $pathYear = $_SERVER['DOCUMENT_ROOT'].'/submissions/'.$semester.'/';
+
+    if (!file_exists($pathYear)) mkdir($pathYear);
+
+    // VALIDATE
+    $error = "";
+  
+    if ($subTitle == null)
+	  $error .= "title field is required<br>";
+    else {
 	
-	///  submission title should be lowercase with underscores in place of spaces
-	///  create a path to a store the new file
-    $pathTitle = str_replace(' ','_', strtolower($subTitle));	
-    $subPath = $pathYear.$pathTitle.'/';
+	  ///  submission title should be lowercase with underscores in place of spaces
+	  ///  create a path to a store the new file
+      $pathTitle = str_replace(' ','_', strtolower($subTitle));	
+      $subPath = $pathYear.$pathTitle.'/';
 
-	if (file_exists($subPath))
-      $error .= "a submission already exists with that title<br>";
-  }
+	  if (file_exists($subPath))
+        $error .= "a submission already exists with that title<br>";
+    }
   
-  if ($subAuth == null)
-	$error .= "author field is required<br>";
+    if ($subAuth == null)
+	  $error .= "author field is required<br>";
   
-  echo $error;
+    echo $error;
+    echo $subType;
   /*
   if(isset($_POST['submission'])){
 
@@ -71,12 +75,12 @@
   </tr><tr>
     <td>Submission Type:</td>
 	<td><select name="subtype">
-       <option value="text-0" selected>Writing</option>
-       <option value="text-1">Poetry</option>
-       <option value="text-2">Serials</option>
-       <option value="file-0">Visual Art</option>
-       <option value="file-1">Photography</option>
-       <option value="file-2">Music</option>
+       <option value="Writing" selected>Writing</option>
+       <option value="Poetry">Poetry</option>
+       <option value="Serials">Serials</option>
+       <option value="Visual Art">Visual Art</option>
+       <option value="Photography">Photography</option>
+       <option value="Music">Music</option>
      </select></td>
   </tr><tr>
   <td>Submission File:</td>
