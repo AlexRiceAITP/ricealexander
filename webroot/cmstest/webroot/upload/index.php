@@ -45,10 +45,26 @@
     if ($_FILES['subfile']['size'] == 0 && $_FILES['subfile']['error'] == 0) {
 	  if ($submission == null)
 		$error .= "we must have a submission file or submission text<br>";
-	  else $pageType = "text";
+	  else {
+		$pageType = "text"; 
+	    $fileExt = "";
+	  }
 	} else {
+	  // File Validation
 	  $pageType = "file";
-	}
+      $fileExt = strtolower(pathinfo(basename($_FILES["subfile"]["name"]),PATHINFO_EXTENSION));
+      $target_file = $subPath.'file.'.$fileExt;
+
+      ///  check file size
+      if ($_FILES['subfile']["size"] > 500000)
+        $error .= "file is too large<br>";
+
+      ///  allow certain file formats
+      if($fileExt != "jpg" && $fileExt != "png" && $fileExt != "jpeg" && $fileExt != "gif" )
+        $error .= "only JPG, JPEG, PNG & GIF files are allowed<br>";
+    }
+  }
+
 	
 	/* VARIABLES
 	$subTitle   = A garden of roses
@@ -59,6 +75,7 @@
 	$semester   = Spring 2018
 	$subPath    = ./submissions/Spring 2018/a_garden_of_roses
 	$pageType   = text
+	$fileExt   = ""
 	*/
 	
       //$subFile = $_FILES['subfile'];
@@ -81,7 +98,10 @@
     $indexPHP = fopen($subPath.'/index.php', "w");
     $contentPHP = "<?php\ninclude \$_SERVER['DOCUMENT_ROOT'].'/assets/header.php';\ninclude 'index.txt';\ninclude \$_SERVER['DOCUMENT_ROOT'].'/assets/footer.php';\n?>";
     fwrite($indexPHP, $contentPHP);
-    fclose($indexPHP);*/
+    fclose($indexPHP);
+	
+	// upload the file
+	move_uploaded_file($_FILES['subfile']["tmp_name"], $target_file);*/
 	
   }
 ?>
