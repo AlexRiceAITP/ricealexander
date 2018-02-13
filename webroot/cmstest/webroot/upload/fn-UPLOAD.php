@@ -1,4 +1,9 @@
-<?php  if(isset($_POST['submission'])){
+<?php
+  if (isset($_GET['action']) && $_GET['action'] == 'success') {
+	echo 'Sucess! You can view <a href="'.$_GET['path'].'">your new submission</a> or upload another file below!';
+  }
+
+  if(isset($_POST['submission'])){
     date_default_timezone_set("America/Chicago");
     $subDate = date("m-d-Y H:i:s");
 	
@@ -98,5 +103,7 @@
 	
 	// upload the image file
 	if($image) move_uploaded_file($_FILES['subfile']["tmp_name"], $target_file);
+	
+	header("Location: index.php?action=success&path=".$subPath);
   }
 ?>
