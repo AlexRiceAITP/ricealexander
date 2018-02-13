@@ -59,9 +59,9 @@
     $indexPHP = fopen($subPath.'/index.php', "w");
     $contentPHP = "<?php\ninclude \$_SERVER['DOCUMENT_ROOT'].'/assets/header.php';\ninclude 'index.txt';\ninclude \$_SERVER['DOCUMENT_ROOT'].'/assets/footer.php';\n?>";
     fwrite($indexPHP, $contentPHP);
-    fclose($indexPHP);
+    fclose($indexPHP);*/
 	
-  }*/
+  }
 ?>
 <h2>Upload</h2>
 <form action="." method="post" enctype="multipart/form-data">
