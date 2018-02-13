@@ -3,24 +3,26 @@
   
   
   if(isset($_POST['submission'])){
-  
+
+    // variables
     $subTitle = filter_input(INPUT_POST, 'title');
     $subAuth = filter_input(INPUT_POST, 'author');
     $subType = filter_input(INPUT_POST, 'subtype');
+    $submission = filter_input(INPUT_POST, 'submission');
 
-    $subFile = '';
+    
     date_default_timezone_set("America/Chicago");
     $subDate = date("m-d-Y H:i:s");
 
-
-    ///  create a directory for the current semester if there isn't one
+	
+    // create a directory for the current semester if there isn't one
     if (date('n') < 6) $semester = "Spring ".date("Y");
     else $semester = "Fall ".date("Y");
     $pathYear = $_SERVER['DOCUMENT_ROOT'].'/submissions/'.$semester.'/';
 
     if (!file_exists($pathYear)) mkdir($pathYear);
 
-    // VALIDATE
+    // validate
     $error = "";
   
     if ($subTitle == null)
@@ -28,7 +30,7 @@
     else {
 	
 	  ///  submission title should be lowercase with underscores in place of spaces
-	  ///  create a path to a store the new file
+	  ///  create a path to a store the new files
       $pathTitle = str_replace(' ','_', strtolower($subTitle));	
       $subPath = $pathYear.$pathTitle.'/';
 
@@ -39,8 +41,28 @@
     if ($subAuth == null)
 	  $error .= "author field is required<br>";
   
+    ///  page can either have a file structure or a text structure
+    if ($_FILES['subfile']['size'] == 0 && $_FILES['subfile']['error'] == 0) {
+	  if ($submission == null)
+		$error .= "we must have a submission file or submission text<br>";
+	  else $pageType = "text";
+	} else {
+	  $pageType = "file";
+	}
+	
+	/* VARIABLES
+	$subTitle   = A garden of roses
+	$subAuth    = Yours T Ruly
+	$subtype    = Poetry
+	$submission = <<<poem here>>>
+	$subDate    = submission date
+	$semester   = Spring 2018
+	$subPath    = ./submissions/Spring 2018/a_garden_of_roses
+	$pageType   = text
+	*/
+	
+      //$subFile = $_FILES['subfile'];
     echo $error;
-    echo $subType;
   /*
   if(isset($_POST['submission'])){
 
@@ -84,7 +106,7 @@
      </select></td>
   </tr><tr>
   <td>Submission File:</td>
-  <td><input type="file" name="fileToUpload" id="fileToUpload"></td>
+  <td><input type="file" name="subfile"></td>
   </tr><tr>
   <td>Submission Text:</td>
   <td><textarea name="submission"></textarea></td>
