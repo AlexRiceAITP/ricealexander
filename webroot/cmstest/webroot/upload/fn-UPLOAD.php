@@ -11,7 +11,7 @@
 
 
     // validate
-    $error = "";
+    $error = ""; $image = false;
   
     if ($subTitle == null)
 	  $error .= "title field is required<br>";
@@ -52,6 +52,8 @@
       ///  allow certain file formats
       if($fileExt != "jpg" && $fileExt != "png" && $fileExt != "jpeg" && $fileExt != "gif" )
         $error .= "only JPG, JPEG, PNG & GIF files are allowed<br>";
+	
+	  $image = true;
     }
 
 	
@@ -73,11 +75,6 @@
 	$fileExt   = ""
 	*/
 
-  /*
-  if(isset($_POST['submission'])){
-
-	
-
 	// create a directory
 	mkdir($subPath);
 	
@@ -93,7 +90,13 @@
     fwrite($indexPHP, $contentPHP);
     fclose($indexPHP);
 	
-	// upload the file
-	move_uploaded_file($_FILES['subfile']["tmp_name"], $target_file);*/
+	// create a .json file with submission information
+    $detailsJSON = fopen($subPath.'details.json', "w");
+    $contentJSON = '{"submission": {"author": '.$subAuth.', "date": '.$subDate.', "ext": '.$fileExt.', "form": '.$pageType.', "path": '.$subPath.', "semester": '.$semester.', "title": '.$subTitle.', "type": '.$subType.'}}';
+    fwrite($detailsJSON, $contentJSON);
+    fclose($detailsJSON);
 	
-  }?>
+	// upload the image file
+	if($image) move_uploaded_file($_FILES['subfile']["tmp_name"], $target_file);
+  }
+?>
