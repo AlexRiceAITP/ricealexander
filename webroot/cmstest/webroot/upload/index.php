@@ -1,14 +1,16 @@
 <?php
   include $_SERVER['DOCUMENT_ROOT'].'/assets/header.php';
   
+  $subTitle = filter_input(INPUT_POST, 'title');
+  $subAuth = filter_input(INPUT_POST, 'author');
+  $subType = filter_input(INPUT_POST, 'subtype');
+  $submission = filter_input(INPUT_POST, 'submission');
   
+
   if(isset($_POST['submission'])){
 
     // variables
-    $subTitle = filter_input(INPUT_POST, 'title');
-    $subAuth = filter_input(INPUT_POST, 'author');
-    $subType = filter_input(INPUT_POST, 'subtype');
-    $submission = filter_input(INPUT_POST, 'submission');
+
 
     
     date_default_timezone_set("America/Chicago");
@@ -42,7 +44,7 @@
 	  $error .= "author field is required<br>";
   
     ///  page can either have a file structure or a text structure
-    if ($_FILES['subfile']['size'] == 0 && $_FILES['subfile']['error'] == 0) {
+    if ($_FILES['subfile']['error'] > 0) {
 	  if ($submission == null)
 		$error .= "we must have a submission file or submission text<br>";
 	  else {
@@ -63,7 +65,6 @@
       if($fileExt != "jpg" && $fileExt != "png" && $fileExt != "jpeg" && $fileExt != "gif" )
         $error .= "only JPG, JPEG, PNG & GIF files are allowed<br>";
     }
-  }
 
 	
 	/* VARIABLES
@@ -77,8 +78,7 @@
 	$pageType   = text
 	$fileExt   = ""
 	*/
-	
-      //$subFile = $_FILES['subfile'];
+
     echo $error;
   /*
   if(isset($_POST['submission'])){
@@ -111,25 +111,25 @@
 
 <table>
   <tr>
-    <td>Title:</td><td><input type="text" name="title"></td>
+    <td>Title:</td><td><input type="text" name="title" <?php echo 'value="'.$subTitle.'"'?>></td>
   </tr><tr>
-    <td>Author:</td><td><input type="text" name="author"></td>
+    <td>Author:</td><td><input type="text" name="author" <?php echo 'value="'.$subAuth.'"'?>></td>
   </tr><tr>
     <td>Submission Type:</td>
 	<td><select name="subtype">
        <option value="Writing" selected>Writing</option>
-       <option value="Poetry">Poetry</option>
-       <option value="Serials">Serials</option>
-       <option value="Visual Art">Visual Art</option>
-       <option value="Photography">Photography</option>
-       <option value="Music">Music</option>
+       <option value="Poetry" <?php if($subType == 'Poetry') echo 'selected'?>>Poetry</option>
+       <option value="Serials" <?php if($subType == 'Serials') echo 'selected'?>>Serials</option>
+       <option value="Visual Art"<?php if($subType == 'Visual Art') echo 'selected'?>>Visual Art</option>
+       <option value="Photography"<?php if($subType == 'Photography') echo 'selected'?>>Photography</option>
+       <option value="Music"<?php if($subType == 'Music') echo 'selected'?>>Music</option>
      </select></td>
   </tr><tr>
   <td>Submission File:</td>
   <td><input type="file" name="subfile"></td>
   </tr><tr>
   <td>Submission Text:</td>
-  <td><textarea name="submission"></textarea></td>
+  <td><textarea name="submission"><?php echo $submission?></textarea></td>
 </table>
 <input type="submit" value="Save" class="modal_button button-save">
 </form>
