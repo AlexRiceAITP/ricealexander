@@ -142,6 +142,71 @@ footer {
    width: 100%;
 }
 
+.modal_overlay {
+   background: repeating-linear-gradient(135deg, rgba(23,27,31,0.8), rgba(23,27,31,0.8) 35px, rgba(32,37,42,0.8) 35px, rgba(32,37,42,0.8) 70px);
+   display: flex;
+   position: fixed;
+   top:0; right:0; bottom:0; left:0;
+   z-index: 1;}
+
+.modal {
+   margin: auto;
+   height: 350px;
+   width:100%; max-width:700px;}
+
+.modal_title {
+   background: #171b1f;
+   border: 1px solid #424951;
+   border-bottom: 3px solid #e74c3c;
+   color: #707b86;
+   font-family: sans-serif;
+   margin: 0;
+   padding: 20px 15px;}
+
+.mt_directory {
+   color: white;
+   direction: rtl;
+   display: inline-block;
+   font-size: 17px;
+   margin-bottom: -3px;
+   overflow: hidden;
+   text-align: left;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   width:575px;}
+
+.modal textarea {
+   height:100%; width:100%;}
+
+.modal_rail {
+   display: flex;
+   justify-content: flex-end;
+   margin-top: -40px;
+   text-align: right;
+   width:100%; max-width:700px;}
+
+.modal_button {
+   border: none;
+   box-sizing: border-box;
+   color: white;
+   cursor: pointer;
+   display: inline-block;
+   font-family: sans-serif;
+   font-size: 15px;
+   line-height: 40px;
+   opacity: 0.999; /* IE flex/opacity bug */
+   padding: 0 20px;
+   text-decoration: none;
+   height:40px;}
+
+.modal_button:hover {
+   opacity:0.8;}
+
+.modal .button-save {
+   background: #e74c3c;}
+
+.modal .button-return {
+   background: #171b1f;}
 
 @media (max-width: 800px) {
   nav li {

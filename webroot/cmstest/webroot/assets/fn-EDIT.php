@@ -1,23 +1,23 @@
 <?php  // executes when the submit button is pushed
-  if(isset($_POST['content']))
-  {
-    $file = fopen($pagename.'.txt', "w") or die("Unable to open file!");
-    $content = $_POST['content'];
-    fwrite($file, $content);
-    fclose($myfile);
-  }
 
 // loads form with an action for the proper page
-echo '<form action="index.php" method="post">
+echo '
+<section class="modal_overlay">
+<form action=".?action=submit" method="post" class="modal">
+<h1 class="modal_title">Editing <span class="mt_directory">'.getcwd().'</span></h1>
 <textarea name="content">';
 
 // loads the current file
-$file = fopen($pagename.'.txt',"r");
+$file = fopen('index.txt',"r");
 while(! feof($file)) { echo fgets($file); }
 fclose($file);
 
-echo '
-</textarea>
-<input type="submit" value="Save" class="button"> <a href="../">back to '.$pagename.'</a>
-</form>';
+echo '</textarea>
+<div class="modal_rail">
+<input type="submit" value="Save" class="modal_button button-save">
+<a href="." class="modal_button button-return">Return</a>
+</div>
+</form>
+</section>
+';
 ?>
