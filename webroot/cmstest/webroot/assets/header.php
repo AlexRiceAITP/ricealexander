@@ -4,6 +4,18 @@ if (isset($_GET['action']) && $_GET['action'] == 'edit')
   include $_SERVER['DOCUMENT_ROOT'].'/assets/fn-EDIT.php';
 else if (isset($_GET['action']) && $_GET['action'] == 'submit')
   include $_SERVER['DOCUMENT_ROOT'].'/assets/fn-SUBMIT.php';
+
+$submission = false;
+
+if (file_exists('./details.json')) {
+  $submission = true;
+
+  // get the json file
+  $json = file_get_contents('./details.json');
+  $jsonData = json_decode($json);
+  $type = $jsonData->submission->form;
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,3 +48,13 @@ else if (isset($_GET['action']) && $_GET['action'] == 'submit')
     <a href=".?action=edit">EDIT</a>
 	</form>
   </header>
+<?php
+if ($submission) {
+  echo "<h2>".$jsonData->submission->title."</h2>";
+  echo "<h4>".$jsonData->submission->author."</h4>";
+  
+  if ($type == "file")
+	echo '<img src="./file.'.$jsonData->submission->ext.'">';
+}
+
+?>

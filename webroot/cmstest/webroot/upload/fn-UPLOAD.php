@@ -1,6 +1,6 @@
 <?php
   if (isset($_GET['action']) && $_GET['action'] == 'success') {
-	echo 'Sucess! You can view <a href="'.$_GET['path'].'">your new submission</a> or upload another file below!';
+	echo 'Success! You can view <a href="'.$_GET['path'].'">your submission</a> or upload another file below!';
   }
 
   if(isset($_POST['submission'])){
@@ -66,7 +66,9 @@
 	  echo $error;
 	  return;
 	}
-	echo "success!!";
+	
+	// remove server root information to build a root relative path
+	$rootPath = str_replace($_SERVER['DOCUMENT_ROOT'], '', $subPath);
 	
 	/* VARIABLES
 	$subTitle   = A garden of roses
@@ -90,20 +92,20 @@
     fclose($indexTXT);
 	
 	// create a .php file that users will access
-    $indexPHP = fopen($subPath.'/index.php', "w");
+    $indexPHP = fopen($subPath.'index.php', "w");
     $contentPHP = "<?php\ninclude \$_SERVER['DOCUMENT_ROOT'].'/assets/header.php';\ninclude 'index.txt';\ninclude \$_SERVER['DOCUMENT_ROOT'].'/assets/footer.php';\n?>";
     fwrite($indexPHP, $contentPHP);
     fclose($indexPHP);
 	
 	// create a .json file with submission information
     $detailsJSON = fopen($subPath.'details.json', "w");
-    $contentJSON = '{"submission": {"author": '.$subAuth.', "date": '.$subDate.', "ext": '.$fileExt.', "form": '.$pageType.', "path": '.$subPath.', "semester": '.$semester.', "title": '.$subTitle.', "type": '.$subType.'}}';
+    $contentJSON = '{"submission": {"author": "'.$subAuth.'", "date": "'.$subDate.'", "ext": "'.$fileExt.'", "form": "'.$pageType.'", "path": "'.$rootPath.'", "semester": "'.$semester.'", "title": "'.$subTitle.'", "type": "'.$subType.'"}}';
     fwrite($detailsJSON, $contentJSON);
     fclose($detailsJSON);
 	
 	// upload the image file
 	if($image) move_uploaded_file($_FILES['subfile']["tmp_name"], $target_file);
 	
-	header("Location: index.php?action=success&path=".$subPath);
+	header("Location: index.php?action=success&path=".$rootPath);
   }
 ?>
