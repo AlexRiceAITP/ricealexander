@@ -276,6 +276,7 @@ html, body, #profile { height: 100%;}
     color: inherit;}
 
   .project_item {
+    margin: 10px 0;
     width:100%;}
 }
 
@@ -283,4 +284,32 @@ html, body, #profile { height: 100%;}
 @media (max-width: 660px) {
   .key {
     display: none;}
+}
+
+
+@media (max-width: 500px) {
+  h2 {
+    padding: 0 15px;}
+
+  .profile_region,
+  .education_region,
+  .work_region,
+  .project_region {
+    margin: 60px 25px;}
+
+  .ed_item,
+  .work_item {
+    margin: 10px 0;}
+
+  #work {
+    padding: 40px 0;}
+
+  .sl_item {
+    font-size: 11px;}
+
+  .sl_stars {
+    width:65px;}
+
+  .pi_date {
+	display: none;}
 }

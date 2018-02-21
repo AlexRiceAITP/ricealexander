@@ -2,9 +2,9 @@
 const skills = document.querySelectorAll('.sl_stars');
 for (let i = 0; i < skills.length; i++) {
   let stars = skills[i].getAttribute('data_stars'), color;
-  let px = stars * 20 + "px";
+  let pcnt = stars * 20 + "%";
   stars >= 2.5 ? color = '#48b14b' : color = '#c5b818';
-  let gradient = 'linear-gradient(90deg, '+ color +' '+ px +', #d1e1ef '+ px +' )';
+  let gradient = 'linear-gradient(90deg, '+ color +' '+ pcnt +', #d1e1ef '+ pcnt +' )';
 
   skills[i].style.background = gradient;
 }
