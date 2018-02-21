@@ -1,0 +1,286 @@
+
+/** TABLE OF CONTENTS
+  *  Profile
+  *  Education
+  *  Work
+  *  Skills
+  *  Projects
+  *  Contact
+  **/
+
+body {
+  color: #1f3346;
+  font-family: Lato;
+  margin:0;}
+
+section {
+  padding: 1em 0;}
+
+h2 {
+  font-size: 20pt;
+  padding: 0 2.5em;
+  text-transform: uppercase;}
+
+h2:before {
+  border-bottom: 3px solid;
+  content: '';
+  display: inline-block;
+  margin-top: 1.3em;
+  position: absolute;
+  height:3px; width:1.5em;}
+
+h2, .ed_title, .work_title, .pi_title {
+  font-family: Montserrat;}
+
+h4 {
+  margin-left: 10px;}
+
+h4:before, .bullet:before {
+  background-color: #e7eff7;
+  border: 2px solid #9faebb;
+  border-radius: .4em;
+  box-sizing: border-box;
+  content: '';
+  display: inline-block;
+  margin: 0 5px 0 0;
+  height:.8em; width:.8em;}
+  
+.key {
+  background: linear-gradient(135deg, #6989A4 50%, #5f819c 50.1%);
+  box-sizing: border-box;
+  color: #d4dae8;
+  font-family: Montserrat;
+  font-size: 12pt;
+  list-style-type: none;
+  margin: 10px;
+  padding: 10px 20px;
+  position: fixed;
+  right:0;
+  text-transform: uppercase;
+  z-index: 1;
+  height:135px; width:135px;}
+
+.key a {
+  color: inherit;
+  text-decoration: none;}
+
+.key a:hover {
+  color: #eff5fa;}
+
+.key .selected, .key .selected:hover {
+  color: #304c66;}
+
+
+
+/* Profile */
+
+html, body, #profile { height: 100%;}
+#profile {
+  background: linear-gradient(60deg, #f3f7fb 50%, transparent 50.02%), linear-gradient(330deg, #e7eff7 70%, transparent 70.02%), #eff5fa;}
+
+.profile_region {
+  display: flex;
+  margin: 100px auto 60px auto;
+  max-width: 920px;}
+
+.pf_picture {
+  background-color: #1f3346;
+  border-radius: 50%;
+  margin-right: 30px;
+  height:400px; width:400px; min-width:400px;}
+
+.pf_picture img {
+  border-radius: 200px;
+  margin: 10px;}
+
+
+@media (max-width: 1000px) {
+  #profile {
+    height:auto;}
+
+  .profile_region {
+    margin: 60px;}
+    
+  .pf_picture {
+    height:320px; min-width:320px;}
+
+  .pf_picture img {
+    height:300px;}
+}
+
+
+@media (max-width: 800px) {
+  .pf_picture {
+    height:200px; width:200px; min-width:200px;}
+
+  .pf_picture img {
+    margin: 5px;
+    height:190px;}
+}
+
+
+@media (max-width: 660px) {
+  .profile_region {
+    display: block;}
+
+  .pf_picture {
+    display: none;}
+}
+
+
+
+/* Education & Work */
+
+.education_region,
+.work_region {
+  margin: 0 auto;
+  max-width:844px;}
+
+.ed_item,
+.work_item {
+  background-color: #e7eff7;
+  border-radius: 8px;
+  box-sizing: border-box;
+  display: inline-block;
+  margin: 10px;
+  padding: 10px;
+  width:400px;}
+
+.ed_complete {
+  background-color: #1f3346;
+  color: #e7eff7;}
+
+.ed_item dd,
+.work_item dd {
+  margin: 0;
+  padding-left: 2.5em;}
+
+.ed_title,
+.work_title {
+  font-weight: bold;
+  padding-bottom: 5px;}
+
+.ed_date,
+.work_date {
+  padding-top: 5px;}
+
+#work {
+  background: linear-gradient(356deg, #1f3346 72.5%, transparent 72.6%), linear-gradient(11deg, #2a4156 65%, transparent 65.1%), linear-gradient(356deg, #2a4156 80%, transparent 80.1%);
+  padding: 100px 0;}
+
+#work h2 {
+  color: #e7eff7;}
+
+
+
+
+/* Skills */
+#skills {
+  padding: 1em 0 4em 0;}
+
+.skills_region {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  max-width:800px;}
+
+.skills_list, .sl_sublist {
+  list-style-type: none;
+  margin:0; padding:0;}
+
+.sl_item {
+  margin: 10px 0;}
+
+.sl_stars {
+  box-shadow: inset 0 2px 9px -1px rgba(244,245,245,0.5), inset 0 -2px 9px -1px rgba(80,85,86,0.125);
+  border-radius: 3px;
+  display: block;
+  margin: 5px 0;
+  text-align: center;
+  height:9px; width:100px;}
+
+
+
+/* Projects */
+
+#projects {
+  background: linear-gradient(60deg, #f3f7fb 50%, transparent 50.02%), linear-gradient(330deg, #e7eff7 70%, transparent 70.02%), #eff5fa;}
+
+.project_region {
+  margin: 0 auto;
+  max-width:844px;}
+
+.project_item {
+  display: inline-block;
+  list-style-type: none;
+  margin: 30px;
+  padding: 0;
+  position: relative;
+  width:400px;}
+
+.pi_titlebar {
+  padding-bottom: 3px;
+  position: relative;}
+
+.pi_title {
+  font-weight: bold;
+  text-decoration: none;}
+
+.pi_date {
+  position: absolute;
+  right:0;}
+
+.pi_imagearea {
+  filter: drop-shadow(1px 1px 3px rgba(66,100,128,0.4));}
+
+.pi_image {
+  max-height:none; max-width:100%;}
+
+.pi_image-placeholder {
+  background: radial-gradient(rgba(122,156,208,0.25) 2px, transparent 2px), radial-gradient(rgba(106,141,195,0.25) 2px, transparent 2px) 4px 4px, linear-gradient(135deg, #7a9cd0, #6a8dc3), #FFF;
+  background-size: 8px 8px, 8px 8px, 100% 100%;
+  height:250px;}
+
+.pi_icons {
+  background: linear-gradient(135deg, rgba(231,239,247,0.75) 70%, rgba(206,216,231,0.75) 70%);
+  margin-top: -49px;
+  padding: 3px 0 0 3px;
+  position: absolute;
+  right:0; left:0;}
+
+.pi_mini {
+  color: initial;
+  max-height:100px; max-width:100px;}
+
+.pi_mini .pi_title {
+  margin-bottom: -45px;
+  padding: 5px;}
+
+
+
+@media (max-width: 870px) {
+  .education_region,
+  .work_region,
+  .project_region {
+    margin: 60px;}
+
+  .ed_item,
+  .work_item {
+    padding: 15px 30px;
+    width:100%;}
+
+  #work {
+    background: linear-gradient(356deg, #1f3346 71.5%, transparent 71.6%), linear-gradient(356deg, #2a4156 76%, transparent 76.1%);}
+
+  #work h2 {
+    color: inherit;}
+
+  .project_item {
+    width:100%;}
+}
+
+
+@media (max-width: 660px) {
+  .key {
+    display: none;}
+}
