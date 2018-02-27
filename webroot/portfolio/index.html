@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Resume</title>
+  <title>Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <link href="https://fonts.googleapis.com/css?family=Montserrat|Lato" rel="stylesheet">
   <link href="assets/portfolio.css" rel="stylesheet">
 </head>
 <body>
+<div class="modal_overlay">
+  <div class="modal">
+    <span class="modal_x" onclick="hideModal();">&times;</span>
+	<div class="modal_contentarea">&nbsp;</div>
+  </div>
+</div>
 <ul class="key">
   <li><a href="#profile">Profile</a></li>
   <li><a href="#education">Education</a></li>
@@ -21,13 +27,22 @@
   <h2>Profile</h2>
   <div class="profile_region">
     <div class="pf_picture">
-	  <img src="assets/profile.png" height="380">
+	  <img src="assets/profile2.png" height="380">
 	</div>
 	<div class="pf_content">
 	  <h1>Alex Rice</h1>
 	  <p class="pf_objective">Seeking a Web Development Internship</p>
-	  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu consectetur urna. Aenean finibus rhoncus metus, in iaculis massa varius interdum. Nam in lacus orci. Aliquam sodales aliquet diam at malesuada. Maecenas non ipsum vel erat lobortis eleifend in a sapien. Aliquam erat volutpat. Donec pretium condimentum leo, quis eleifend nisl congue nec. In quis dolor at tortor ultrices imperdiet. Morbi in dictum lectus. Integer a tellus scelerisque, dictum tortor sed, dictum erat. Vestibulum risus turpis, varius non massa ac, ultrices imperdiet enim. Mauris dictum mauris mauris, quis vestibulum erat faucibus non. Sed rutrum velit sed nisl tempus finibus.</p>
-	  <p class="pf_socials">&nbsp;</p>
+	  <div class="pf_summary">
+	    <p class="pf_summary">Hi, I'm Alex Rice, a 20 year old student at Southwestern Illinois College. I've been exploring the world of web design for 5 years, and now I build websites. I have a passion for simple but powerful design, and I take a do-it yourself approach to my projects.</p>
+
+        <p>I believe the best learning comes from striving to understand how and why something works, and working to build something that's better than what is already out there. This is why I challenge myself: to charter new and familiar territory with efficiency, strength, and poise.</p>
+
+        <p>I am president of my college's <a href="http://swicaitp.com">AITP&nbsp;computer&nbsp;club</a>, and currently host the largest single-author online resource for <a href="http://ricealexander.com/patterns">CSS3&nbsp;Gradient&nbsp;Patterns</a>, and every bit of code on this page, as well as all of my <a href="#Personal_Projects">personal&nbsp;projects</a> below, were designed from scratch.</p>
+	  </div>
+	  <p class="pf_socials">
+	    <a class="pf_social_link" href="https://www.linkedin.com/in/alexander-rice-706b7013b/"><img class="pf_social_icon" src="assets/icon-linkedin.png"></a>
+	    <a class="pf_social_link" href="https://github.com/AlexRiceAITP/"><img class="pf_social_icon" src="assets/icon-github.svg"></a>
+	  </p>
 	</div>
   </div>
 </section>
@@ -167,7 +182,7 @@
       <span class="pi_title">Head2Hand</span>
       <span class="pi_date">Fall 2017 - current</span>
     </li>
-    <li class="pi_imagearea"><a href="http://head2handmag.com/"><img src="assets/thumb-head2hand.png" class="pi_image"></a></li>
+    <li class="pi_imagearea"><a onclick="launchModal('head2hand')"><img src="assets/thumb-head2hand.png" class="pi_image"></a></li>
     <li class="pi_icons">
       <img src="assets/badge-HTML5.svg" height="40">
       <img src="assets/badge-CSS3.svg" height="40">
@@ -181,7 +196,7 @@
       <span class="pi_title">STCCHS</span>
       <span class="pi_date">Spring 2017 - Fall 2017</span>
     </li>
-    <li class="pi_imagearea"><a href="http://stcchs.org/"><img src="assets/thumb-stcchs.png" class="pi_image"></a></li>
+    <li class="pi_imagearea"><a onclick="launchModal('stcchs')"><img src="assets/thumb-stcchs.png" class="pi_image"></a></li>
     <li class="pi_icons">
       <img src="assets/badge-HTML5.svg" height="40">
       <img src="assets/badge-CSS3.svg" height="40">
@@ -193,7 +208,7 @@
       <span class="pi_title">SWIC AITP</span>
       <span class="pi_date">Spring 2017 - Summer 2017</span>
     </li>
-    <li class="pi_imagearea"><a href="http://swicaitp.com/"><img src="assets/thumb-swicaitp.png" class="pi_image"></a></li>
+    <li class="pi_imagearea"><a onclick="launchModal('swicaitp')"><img src="assets/thumb-swicaitp.png" class="pi_image"></a></li>
     <li class="pi_icons">
       <img src="assets/badge-HTML5.svg" height="40">
       <img src="assets/badge-CSS3.svg" height="40">
@@ -209,7 +224,7 @@
       <span class="pi_title">Chat Skin Generator</span>
       <span class="pi_date">Spring 2018</span>
     </li>
-    <li class="pi_imagearea"><a href="http://ricealexander.com/webtools/skin-generator/"><img src="assets/thumb-skingentr.png" class="pi_image"></a></li>
+    <li class="pi_imagearea"><a onclick="launchModal('chatskin')"><img src="assets/thumb-skingentr.png" class="pi_image"></a></li>
     <li class="pi_icons">
       <img src="assets/badge-HTML5.svg" height="40">
       <img src="assets/badge-CSS3.svg" height="40">
@@ -222,7 +237,7 @@
       <span class="pi_title">Minesweeper</span>
       <span class="pi_date">Summer 2017 - Spring 2018</span>
     </li>
-    <li class="pi_imagearea"><a href="http://ricealexander.com/minesweeper/"><img src="assets/thumb-minesweep.png" class="pi_image"></a></li>
+    <li class="pi_imagearea"><a onclick="launchModal('minesweep')"><img src="assets/thumb-minesweep.png" class="pi_image"></a></li>
     <li class="pi_icons">
       <img src="assets/badge-HTML5.svg" height="40">
       <img src="assets/badge-CSS3.svg" height="40">
@@ -235,7 +250,7 @@
       <span class="pi_title">CSS3 Pattern Gallery</span>
       <span class="pi_date">Spring 2015 - Spring 2018</span>
     </li>
-    <li class="pi_imagearea"><a href="http://ricealexander.com/patterns/"><img src="assets/thumb-patterngal.png" class="pi_image"></a></li>
+    <li class="pi_imagearea"><a onclick="launchModal('patterns')"><img src="assets/thumb-patterngal.png" class="pi_image"></a></li>
     <li class="pi_icons">
       <img src="assets/badge-HTML5.svg" height="40">
       <img src="assets/badge-CSS3.svg" height="40">
@@ -263,6 +278,13 @@
 
 <section id="contact">
   <h2>Contact</h2>
+  <div class="contact_region">
+  	<p class="cn_socials">
+	  <a class="cn_social_link" href="https://www.linkedin.com/in/alexander-rice-706b7013b/"><img class="cn_social_icon" src="assets/icon-linkedin.png"></a>
+	  <a class="cn_social_link" href="https://github.com/AlexRiceAITP/"><img class="pf_social_icon" src="assets/icon-github.svg"></a>
+	  <span class="cn_email">alexanderrice97@gmail.com</span>
+	</p>
+  </div>
 </section>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

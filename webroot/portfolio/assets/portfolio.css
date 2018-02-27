@@ -67,12 +67,14 @@ h4:before, .bullet:before {
 .key a:hover {
   color: #eff5fa;}
 
-.key .selected, .key .selected:hover {
+.key .selected,
+.key .selected:hover a {
   color: #304c66;}
 
+  
+  
 
-
-/* Profile */
+/* Profile & Contact */
 
 html, body, #profile { height: 100%;}
 #profile {
@@ -84,7 +86,8 @@ html, body, #profile { height: 100%;}
   max-width: 920px;}
 
 .pf_picture {
-  background-color: #1f3346;
+  background: linear-gradient(180deg, transparent 50%, #1f3346 50%), linear-gradient(90deg, #1f3346 50%, transparent 50%), #2a4156;
+  background-size: 4px 4px;
   border-radius: 50%;
   margin-right: 30px;
   height:400px; width:400px; min-width:400px;}
@@ -93,6 +96,45 @@ html, body, #profile { height: 100%;}
   border-radius: 200px;
   margin: 10px;}
 
+.pf_objective {
+  color: #5f819c;
+  font-family: Montserrat;
+  margin-top: -1em;}
+
+.pf_summary a {
+  background-color: #dae7f4;
+  color: #5f819c;
+  padding: 0 5px;
+  text-decoration: none;}
+
+.pf_summary a:hover {
+  background-color: #cee1f1;}
+
+.pf_socials,
+.cn_socials {
+  text-align: center;}
+
+.pf_social_link,
+.cn_social_link {
+  margin:5px;}
+
+.pf_social_icon,
+.cn_social_icon {
+  transition: .8s;
+  width: 40px;}
+
+.pf_social_icon:hover,
+.cn_social_icon:hover {
+  transform: scale(1.2,1.2);
+  transition: .4s;}
+
+.cn_socials {
+  margin-left: -200px;}
+
+.cn_email {
+  line-height: 40px;
+  margin-left: 7px;
+  position: absolute;}
 
 @media (max-width: 1000px) {
   #profile {
@@ -201,7 +243,7 @@ html, body, #profile { height: 100%;}
 
 
 
-/* Projects */
+/* Projects • */
 
 #projects {
   background: linear-gradient(60deg, #f3f7fb 50%, transparent 50.02%), linear-gradient(330deg, #e7eff7 70%, transparent 70.02%), #eff5fa;}
@@ -216,7 +258,12 @@ html, body, #profile { height: 100%;}
   margin: 30px;
   padding: 0;
   position: relative;
+  transition: .8s;
   width:400px;}
+
+.project_item:hover {
+  transform: scale(1.1,1.1);
+  transition: .4s;}
 
 .pi_titlebar {
   padding-bottom: 3px;
@@ -231,6 +278,7 @@ html, body, #profile { height: 100%;}
   right:0;}
 
 .pi_imagearea {
+  cursor: pointer;
   filter: drop-shadow(1px 1px 3px rgba(66,100,128,0.4));}
 
 .pi_image {
@@ -250,12 +298,132 @@ html, body, #profile { height: 100%;}
 
 .pi_mini {
   color: initial;
-  max-height:100px; max-width:100px;}
+  max-height:100px; width:100px;}
 
 .pi_mini .pi_title {
-  margin-bottom: -45px;
-  padding: 5px;}
+  margin: 0 0 -115px 10px;
+  padding: 5px;
+  height:100px;}
 
+
+
+/* Project Modals */
+
+body .modal_active {
+  display:flex;}
+
+.overlay_up {
+  overflow: hidden;}
+
+.modal_overlay {
+  background: repeating-linear-gradient(135deg, rgba(24,31,39,0.6), rgba(24,31,39,0.6) 35px, rgba(32,40,48,0.6) 35px, rgba(32,40,48,0.6) 70px);
+  display: none;
+  position: fixed;
+  top:0; right:0; bottom:0; left:0;
+  z-index: 2;}
+  
+.modal {
+  background-color: white;
+  border-radius: 8px;
+  margin: auto;
+  position: relative;
+  height:500px; width:400px;}
+
+.modal_x {
+  border-radius: 15px;
+  cursor: pointer;
+  display: block;
+  font-size: 30px;
+  line-height: 30px;
+  position: absolute;
+  top:7px; right:7px;
+  text-align: center;
+  transition: .2s;
+  height:30px; width:30px;}
+
+.modal_x:hover {
+  opacity: .5;}
+
+.modal_title {
+  font-size: 16pt;
+  padding: 0 15px;}
+
+.modal_title:before {
+  display: none;}
+
+.modal_semester {
+  color: #5f819c;
+  font-family: Montserrat;
+  font-size: 10pt;
+  margin: -1em 0 1em 15px;}
+
+.modal_img {
+  clip: rect(0px,400px,50px,0px);
+  position: absolute;
+  max-width:100%;}
+
+.modal_content {
+  color: #1f3346;
+  margin: 85px 15px 10px 15px;}
+
+.modal_content a {
+  color: #359ECF;
+  text-decoration: none;}
+
+.modal_content a:hover {
+  color: #30b0ea;}
+  
+.modal_links {
+  display: block;
+  margin: 0 auto;
+  position: absolute;
+  right:0; bottom:10px; left:0;
+  width:100px;}
+
+.modal_button {
+  background-color: #359ECF;
+  border-radius: 4px;
+  color: white;
+  display: inline-block;
+  line-height: 40px;
+  margin: 0 2px;
+  padding: 0px 30px;
+  text-decoration: none;}
+
+.modal_button:hover {
+  background-color: #30b0ea;}
+
+.modal_github {
+  display: inline-block;
+  padding: 2.5px;
+  position: absolute;
+  transition: .8s;
+  width:35px;}
+
+.modal_github:hover {
+  transform: scale(1.1,1.1);
+  transition: .4s;}
+
+.modal_github img {
+  max-width:100%;}
+
+
+
+/* Media Queries */
+
+@media (min-width: 1550px) {
+  h2 {
+    padding:0 4em;}
+
+  .project_region {
+    min-width: 1390px;}
+}
+
+
+@media (min-width: 1300px) {
+  #work {
+    background: linear-gradient(356deg, #1f3346 69.5%, transparent 69.6%), linear-gradient(11deg, #2a4156 55%, transparent 55.1%), linear-gradient(356deg, #2a4156 75%, transparent 75.1%);}
+}
 
 
 @media (max-width: 870px) {
@@ -276,7 +444,7 @@ html, body, #profile { height: 100%;}
     color: inherit;}
 
   .project_item {
-    margin: 10px 0;
+    margin: 20px 0;
     width:100%;}
 }
 
