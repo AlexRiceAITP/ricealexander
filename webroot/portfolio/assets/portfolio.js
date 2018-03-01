@@ -125,7 +125,7 @@ function launchModal(project) {
         <a href='+ dir.url[0] +' target="_blank" class="modal_button modal_link">Visit</a>';
 	
 	if (dir.github) content += '\
-        <a href='+ dir.url[1] +' class="modal_github"><img src="assets/icon-github.svg"></a>';
+        <a href='+ dir.url[1] +' target="_blank" class="modal_github"><img src="assets/icon-github.svg"></a>';
 		
 	content += '\
 	  </div>';

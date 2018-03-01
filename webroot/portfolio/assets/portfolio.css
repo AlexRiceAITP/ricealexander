@@ -1,13 +1,3 @@
-
-/** TABLE OF CONTENTS
-  *  Profile
-  *  Education
-  *  Work
-  *  Skills
-  *  Projects
-  *  Contact
-  **/
-
 body {
   color: #1f3346;
   font-family: Lato;
@@ -151,6 +141,41 @@ html, body, #profile { height: 100%;}
 }
 
 
+/* behavior of linkedin and github buttons
+ *   top: image_height; left: .5(image_height) - 50px;
+ */
+@media (min-width:660px) and (max-width:1000px) {
+  .profile_region {
+    position: relative;}
+
+  .pf_socials {
+    position: absolute;}
+}
+
+@media (min-width:801px) and (max-width:1000px) {	
+  .pf_socials {
+    top:320px; left:110px;}
+}
+
+@media (min-width:660px) and (max-width:800px) {
+  .pf_socials {
+    top:200px; left:50px;}
+}
+
+
+/* other profile media queries */
+
+@media (min-width: 1000px) {
+  #profile h2 {
+  position: absolute;}
+  
+  #profile {
+  display: flex;}
+  
+  .profile_region {
+  margin: auto;}
+}
+
 @media (max-width: 800px) {
   .pf_picture {
     height:200px; width:200px; min-width:200px;}
@@ -159,7 +184,6 @@ html, body, #profile { height: 100%;}
     margin: 5px;
     height:190px;}
 }
-
 
 @media (max-width: 660px) {
   .profile_region {
@@ -192,8 +216,12 @@ html, body, #profile { height: 100%;}
   background-color: #1f3346;
   color: #e7eff7;}
 
+#education .ed_complete dd {
+  color: #9fa7b4;}
+
 .ed_item dd,
 .work_item dd {
+  color: #6f8fad;
   margin: 0;
   padding-left: 2.5em;}
 
@@ -223,12 +251,12 @@ html, body, #profile { height: 100%;}
 .skills_region {
   display: flex;
   justify-content: space-evenly;
-  margin: 0 auto;
+  margin: 30px auto;
   max-width:800px;}
 
 .skills_list, .sl_sublist {
   list-style-type: none;
-  margin:0; padding:0;}
+  margin: 0 5%; padding:0;}
 
 .sl_item {
   margin: 10px 0;}
@@ -243,11 +271,14 @@ html, body, #profile { height: 100%;}
 
 
 
-/* Projects • */
+/* Projects */
 
 #projects {
   background: linear-gradient(60deg, #f3f7fb 50%, transparent 50.02%), linear-gradient(330deg, #e7eff7 70%, transparent 70.02%), #eff5fa;}
 
+#projects h4 {
+  margin-left: 30px;}
+	
 .project_region {
   margin: 0 auto;
   max-width:925px;}
@@ -284,11 +315,6 @@ html, body, #profile { height: 100%;}
 .pi_image {
   max-height:none; max-width:100%;}
 
-.pi_image-placeholder {
-  background: radial-gradient(rgba(122,156,208,0.25) 2px, transparent 2px), radial-gradient(rgba(106,141,195,0.25) 2px, transparent 2px) 4px 4px, linear-gradient(135deg, #7a9cd0, #6a8dc3), #FFF;
-  background-size: 8px 8px, 8px 8px, 100% 100%;
-  height:250px;}
-
 .pi_icons {
   background: linear-gradient(135deg, rgba(231,239,247,0.75) 70%, rgba(206,216,231,0.75) 70%);
   margin-top: -49px;
@@ -296,14 +322,28 @@ html, body, #profile { height: 100%;}
   position: absolute;
   right:0; left:0;}
 
-.pi_mini {
-  color: initial;
-  max-height:100px; width:100px;}
+.pi_minirail {
+  margin-left: 25px;}
 
-.pi_mini .pi_title {
-  margin: 0 0 -115px 10px;
-  padding: 5px;
-  height:100px;}
+.pi_mini {
+  background-color: #6989a4;
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: #d4dae8;
+  display: inline-block;
+  font-family: Montserrat;
+  font-size: 10pt;
+  margin: 5px;
+  overflow: hidden;
+  padding: 15px;
+  text-decoration: none;
+  transition: .8s;
+  height:100px; width:100px;}
+
+.pi_mini:hover {
+  background-color: #5f819c;
+  transform: scale(1.1,1.1);
+  transition: .4s;}
 
 
 
@@ -415,8 +455,21 @@ body .modal_active {
   h2 {
     padding:0 4em;}
 
+  .education_region,
+  .work_region,
   .project_region {
     min-width: 1390px;}
+	
+  .ed_item,
+  .work_item {
+	width:670px;
+	font-size: 15pt;
+  }
+  
+  .ed_title, .work_title {
+	font-size: 14pt;
+	text-transform: uppercase;
+  }
 }
 
 
@@ -443,15 +496,24 @@ body .modal_active {
   #work h2 {
     color: inherit;}
 
+  #projects h4 {
+	margin-left: 0;}
+
   .project_item {
     margin: 20px 0;
     width:100%;}
+
+  .pi_minirail {
+    margin-left: -5px;}
 }
 
 
 @media (max-width: 660px) {
   .key {
     display: none;}
+  
+  #contact h2 {
+	display: none;}
 }
 
 
@@ -464,6 +526,9 @@ body .modal_active {
   .work_region,
   .project_region {
     margin: 60px 25px;}
+
+  #education h4 {
+    margin-left: 0;}
 
   .ed_item,
   .work_item {
