@@ -1,3 +1,19 @@
+// smooth scrolling
+///  https://www.w3schools.com/jquery/tryit.asp?filename=tryjquery_eff_animate_smoothscroll
+$("a").on('click', function(event) {
+  if (this.hash !== "") {
+    event.preventDefault();
+    var hash = this.hash;
+    
+	$('html, body').animate({
+      scrollTop: $(hash).offset().top
+      }, 800, function(){
+        window.location.hash = hash;
+    });
+  }
+});
+
+
 // add colored bars to the skills section
 const skills = document.querySelectorAll('.sl_stars');
 for (let i = 0; i < skills.length; i++) {
@@ -39,6 +55,7 @@ $(window).scroll(function() {
 });
 
 
+// projects functionality
 var projects = {
   head2hand: {
 	title: "Head&nbsp;2&nbsp;Hand Literary&nbsp;Magazine",
@@ -108,9 +125,13 @@ var projects = {
 	content: "<p>My introduction to web coding started with CSS, building custom skins for websites. Overlaying CSS gradients allows for a large number of possible designs to be created.</p><p>Each of these patterns was created by myself, and to my knowledge it is the largest single-author gradient pattern gallery out there.</p><p>The biggest challenge to this project, aside from creating the gradients, was building functionality to copy patterns to the clipboard.</p>"
   },
 }
+var projectlist = Object.keys(projects);
+var currentModal = null;
 
 function launchModal(project) {
   if (project) {
+	currentModal = $.inArray(project, projectlist);
+
     $('body').addClass('overlay_up');
     $('.modal_overlay').addClass('modal_active');
   
@@ -136,11 +157,34 @@ function launchModal(project) {
 }
 
 function hideModal() {
+  currentModal = null;
   $('body').removeClass('overlay_up');
   $('.modal_overlay').removeClass('modal_active');
 }
 
+function prevModal() {
+  if (currentModal >= 0) {
+	let prev = (currentModal == 0) ? projectlist.length -1 : currentModal - 1
+    launchModal(projectlist[prev]);
+  }
+}
+
+function nextModal() {
+  if (currentModal >= 0) {
+	let next = (currentModal == projectlist.length - 1) ? 0 : currentModal + 1;
+    launchModal(projectlist[next]);
+  }
+}
+
+///  hide modal when clicked away
 $(document).mouseup(function(e) {
-  var modal = $('.modal');
-  if (!modal.is(e.target) && modal.has(e.target).length === 0) hideModal();
+  if (!$('.modal').is(e.target)) hideModal();
+});
+
+///  keyboard events
+$('body').keydown(function(e){
+  if(e.which == 27) hideModal();                  // Esc
+  if(e.which == 37 || e.which == 40) prevModal(); // ← ↓
+  if(e.which == 38 || e.which == 39) nextModal(); // ↑ →
+  if(e.which == 13) $(".modal_link")[0].click();  // Enter
 });

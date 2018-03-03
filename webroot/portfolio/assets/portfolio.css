@@ -470,6 +470,10 @@ body .modal_active {
 	font-size: 14pt;
 	text-transform: uppercase;
   }
+  
+  .skills_region {
+    margin: 100px auto;
+	transform: scale(1.5,1.5);}
 }
 
 
