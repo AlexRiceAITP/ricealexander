@@ -345,6 +345,8 @@ html, body, #profile { height: 100%;}
   transform: scale(1.1,1.1);
   transition: .4s;}
 
+.pi_mini[href="#"] {
+  display: none;}
 
 
 /* Project Modals */
