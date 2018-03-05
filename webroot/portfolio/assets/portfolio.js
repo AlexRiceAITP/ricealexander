@@ -27,10 +27,15 @@ for (let i = 0; i < skills.length; i++) {
 
 
 // table of contents box code
-const sections = ['profile', 'education', 'work', 'skills', 'projects', 'contact'];
+const sections = ['profile', 'skills', 'projects', 'education', 'work', 'contact'];
 const keysects = $('.key li');
 
-$(window).scroll(function() {  
+keyCode();
+$(window).scroll(function() {
+  keyCode();
+});
+
+function keyCode() {  
   ///  build an array of where each section is located
   var heights = [];
   for (let i = 0; i < sections.length; i++)
@@ -45,6 +50,9 @@ $(window).scroll(function() {
 	else
 	  keysects[i].className = "";
   }
+  
+  if (section == 'profile') $('.key').hide();
+  else $('.key').show();
     
   
   function getSection() {
@@ -52,7 +60,7 @@ $(window).scroll(function() {
     for (let i = sections.length -1; i >= 0; i--)
       if (pos >= heights[i]) return sections[i];
   }
-});
+}
 
 
 // projects functionality

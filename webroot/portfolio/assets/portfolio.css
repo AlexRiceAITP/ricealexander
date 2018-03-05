@@ -70,6 +70,10 @@ html, body, #profile { height: 100%;}
 #profile {
   background: linear-gradient(60deg, #f3f7fb 50%, transparent 50.02%), linear-gradient(330deg, #e7eff7 70%, transparent 70.02%), #eff5fa;}
 
+#profile h2 {
+  display: inline-block;
+  position: relative;}
+
 .profile_region {
   display: flex;
   margin: 100px auto 60px auto;
@@ -117,6 +121,40 @@ html, body, #profile { height: 100%;}
 .cn_social_icon:hover {
   transform: scale(1.2,1.2);
   transition: .4s;}
+
+.pf_arrowbar {
+  position: absolute;
+  bottom:0;
+  width:100%;}
+
+.pf_arrow {
+  background: linear-gradient(135deg, transparent 50%, #6989a4 50.1%);
+  color: transparent;
+  display: block;
+  filter: drop-shadow(10px 6px 2px rgba(105,137,164,0.15));
+  margin: 0 auto 30px auto;
+  transform: rotate(45deg);
+  height:40px; width:40px;}
+
+.pf_topnav {
+  display:flex;
+  font-family: Montserrat;}
+
+.pf_navbar {
+  list-style: none;
+  margin: 33px 0 0 -33px;
+  padding: 0;}
+
+.pf_navbar li {
+  display: inline-block;
+  margin: 0 3px;}
+
+.pf_navbar a {
+  color: #5f819c;
+  text-decoration: none;}
+
+.pf_navbar a:hover {
+  color: #1f3346;}
 
 .cn_socials {
   margin-left: -200px;}
@@ -166,7 +204,7 @@ html, body, #profile { height: 100%;}
 /* other profile media queries */
 
 @media (min-width: 1000px) {
-  #profile h2 {
+  .pf_topnav {
   position: absolute;}
   
   #profile {
