@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-115101179-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-115101179-1');
+  </script>
+
+  <title>Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link href="https://fonts.googleapis.com/css?family=Montserrat|Lato" rel="stylesheet">
+  <link href="assets/portfolio.css" rel="stylesheet">
+</head>
+<body>
+<div class="modal_overlay">
+  <div class="modal">
+    <span class="modal_x" onclick="hideModal();">&times;</span>
+	<div class="modal_contentarea">&nbsp;</div>
+  </div>
+</div>
+<ul class="key">
+  <li><a href="#profile">Profile</a></li>
+  <li><a href="#skills">Skills</a></li>
+  <li><a href="#projects">Projects</a></li>
+  <li><a href="#education">Education</a></li>
+  <li><a href="#work">Work</a></li>
+  <li><a href="#contact">Contact</a></li>
+</ul>
+
+<section id="profile">
+  <div class="pf_topnav">
+    <h2>Profile</h2>
+	<ul class="pf_navbar">
+      <li><a href="#profile">Profile</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+  <div class="profile_region">
+    <div class="pf_picture">
+	  <img src="assets/profile2.png" height="380">
+	</div>
+	<div class="pf_content">
+	  <h1>Alex Rice</h1>
+	  <p class="pf_objective">Seeking a Web Development Internship</p>
+	  <div class="pf_summary">
+	    <p class="pf_summary">Hi, I'm Alex Rice, a student at Southwestern Illinois College. I've been exploring the world of web design for 5 years, and now I build websites. I have a passion for simple but powerful design, and I take a do-it yourself approach to my projects.</p>
+
+        <p>I believe the best learning comes from striving to understand how and why something works, and working to build something that's better than what is already out there. This is why I challenge myself: to charter new and familiar territory with efficiency, strength, and poise.</p>
+
+        <p>I am president of my college's <a target="_blank" href="http://swicaitp.com">AITP&nbsp;computer&nbsp;club</a>, and currently host the largest single-author online resource for <a target="_blank" href="http://ricealexander.com/patterns">CSS3&nbsp;Gradient&nbsp;Patterns</a>, and every bit of code on this page, as well as all of my <a target="_blank" href="#Personal_Projects">personal&nbsp;projects</a> below, were designed from scratch.</p>
+	  </div>
+	  <p class="pf_socials">
+	    <a target="_blank"class="pf_social_link" href="https://www.linkedin.com/in/alexander-rice-706b7013b/"><img class="pf_social_icon" src="assets/icon-linkedin.png"></a>
+	    <a target="_blank" class="pf_social_link" href="https://github.com/AlexRiceAITP/"><img class="pf_social_icon" src="assets/icon-github.svg"></a>
+	  </p>
+	</div>
+  </div>
+  <div class="pf_arrowbar">
+	<a href="#skills" class="pf_arrow">&nbsp;</a>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="skills_region">
+
+    <ul class="skills_list">
+    <li class="sl_item">HTML
+      <span class="sl_stars" data_stars="4.5">&nbsp;</span></li>
+    <li class="sl_item">CSS
+      <span class="sl_stars" data_stars="4.5">&nbsp;</span></li>
+    <li class="sl_item">JavaScript
+      <span class="sl_stars" data_stars="4.5">&nbsp;</span></li>
+    <li class="sl_item">Github
+      <span class="sl_stars" data_stars="4">&nbsp;</span></li>
+    <li class="sl_item">PHP
+      <span class="sl_stars" data_stars="3.5">&nbsp;</span></li>
+    <li class="sl_item">Java
+      <span class="sl_stars" data_stars="3.5">&nbsp;</span></li>
+    <li class="sl_item">XML
+      <span class="sl_stars" data_stars="2.5">&nbsp;</span></li>
+    </ul>
+
+    <ul class="skills_list">
+    <li class="sl_item bullet">Adobe Suite
+      <ul class="sl_sublist">
+      <li class="sl_item">Illustrator
+        <span class="sl_stars" data_stars="4">&nbsp;</span></li>
+      <li class="sl_item">Photoshop
+        <span class="sl_stars" data_stars="3">&nbsp;</span></li>
+      <li class="sl_item">InDesign
+        <span class="sl_stars" data_stars="3">&nbsp;</span></li>
+      <li class="sl_item">Dreamweaver
+        <span class="sl_stars" data_stars="1.5">&nbsp;</span></li>
+      </ul>
+    </li>
+    </ul>
+
+    <ul class="skills_list">
+    <li class="sl_item">SQL
+      <span class="sl_stars" data_stars="2">&nbsp;</span></li>
+    <li class="sl_item">jQuery
+      <span class="sl_stars" data_stars="1.5">&nbsp;</span></li>
+    <li class="sl_item">XSL
+      <span class="sl_stars" data_stars="1.5">&nbsp;</span></li>
+    </ul>
+
+  </div><br>
+</section>
+
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="project_region">
+
+    <ul class="project_item">
+    <li class="pi_titlebar">
+      <span class="pi_title">STCCHS</span>
+    </li>
+    <li class="pi_imagearea"><a onclick="launchModal('stcchs')"><img src="assets/thumb-stcchs.png" class="pi_image"></a></li>
+    <li class="pi_icons">
+      <img src="assets/badge-HTML5.svg" height="40">
+      <img src="assets/badge-CSS3.svg" height="40">
+    </li>
+    </ul>
+
+    <ul class="project_item">
+    <li class="pi_titlebar">
+      <span class="pi_title">Minesweeper</span>
+    </li>
+    <li class="pi_imagearea"><a onclick="launchModal('minesweep')"><img src="assets/thumb-minesweep.png" class="pi_image"></a></li>
+    <li class="pi_icons">
+      <img src="assets/badge-HTML5.svg" height="40">
+      <img src="assets/badge-CSS3.svg" height="40">
+      <img src="assets/badge-JS5.svg" height="40">
+    </li>
+    </ul>
+
+    <ul class="project_item">
+    <li class="pi_titlebar">
+      <span class="pi_title">CSS3 Pattern Gallery</span>
+    </li>
+    <li class="pi_imagearea"><a onclick="launchModal('patterns')"><img src="assets/thumb-patterngal.png" class="pi_image"></a></li>
+    <li class="pi_icons">
+      <img src="assets/badge-HTML5.svg" height="40">
+      <img src="assets/badge-CSS3.svg" height="40">
+      <img src="assets/badge-JS5.svg" height="40">
+      <img src="assets/badge-PHP7.png" height="40">
+    </li>
+    </ul>
+
+    <ul class="project_item">
+    <li class="pi_titlebar">
+      <span class="pi_title">SWIC AITP</span>
+    </li>
+    <li class="pi_imagearea"><a onclick="launchModal('swicaitp')"><img src="assets/thumb-swicaitp.png" class="pi_image"></a></li>
+    <li class="pi_icons">
+      <img src="assets/badge-HTML5.svg" height="40">
+      <img src="assets/badge-CSS3.svg" height="40">
+      <img src="assets/badge-JS5.svg" height="40">
+      <img src="assets/badge-PHP7.png" height="40">
+    </li>
+    </ul>
+
+    <ul class="project_item">
+    <li class="pi_titlebar">
+      <span class="pi_title">Chat Skin Generator</span>
+    </li>
+    <li class="pi_imagearea"><a onclick="launchModal('chatskin')"><img src="assets/thumb-skingentr.png" class="pi_image"></a></li>
+    <li class="pi_icons">
+      <img src="assets/badge-HTML5.svg" height="40">
+      <img src="assets/badge-CSS3.svg" height="40">
+      <img src="assets/badge-JS5.svg" height="40">
+    </li>
+    </ul>
+
+    <ul class="project_item">
+    <li class="pi_titlebar">
+      <span class="pi_title">Head2Hand</span>
+    </li>
+    <li class="pi_imagearea"><a onclick="launchModal('head2hand')"><img src="assets/thumb-head2hand.png" class="pi_image"></a></li>
+    <li class="pi_icons">
+      <img src="assets/badge-HTML5.svg" height="40">
+      <img src="assets/badge-CSS3.svg" height="40">
+      <img src="assets/badge-JS5.svg" height="40">
+      <img src="assets/badge-PHP7.png" height="40">
+    </li>
+    </ul>
+  
+    <h4>Other</h4>
+   
+    <div class="pi_minirail">
+      <a target="_blank" class="pi_mini" href="http://ricealexander.com/webtools/stringgenerator/">Random Strings Tool</a>
+      <a target="_blank" class="pi_mini" href="http://ricealexander.com/webtools/snippets/">JavaScript Snippets</a>  
+      <a target="_blank" class="pi_mini" href="#">Slider Puzzle</a>  
+      <a target="_blank" class="pi_mini" href="#">Batch URL Loader</a>
+	</div>
+  </div>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <div class="education_region">
+
+    <dl class="ed_item ed_complete">
+      <dt class="ed_title">Occupational Certificate - Java Programming</dt>
+      <dd>Southwestern Illinois College</dd>
+      <dd>Belleville, IL</dd>
+      <dd class="ed_date">August 2016 - May 2017</dd>
+    </dl>
+
+    <h4>Current Program</h4>
+
+    <dl class="ed_item">
+      <dt class="ed_title">Occupational Certificate - Web Design</dt>
+      <dd>Southwestern Illinois College</dd>
+      <dd>Belleville, IL</dd>
+      <dd class="ed_date">August 2015 - anticipated August 2018</dd>
+    </dl>
+
+    <dl class="ed_item">
+      <dt class="ed_title">Occupational Certificate - Web Development</dt>
+      <dd>Southwestern Illinois College</dd>
+      <dd>Belleville, IL</dd>
+      <dd class="ed_date">August 2015 - anticipated August 2018</dd>
+    </dl>
+
+    <dl class="ed_item">
+      <dt class="ed_title">Associate Applied Science - Web Design</dt>
+      <dd>Southwestern Illinois College</dd>
+      <dd>Belleville, IL</dd>
+      <dd class="ed_date">August 2015 - anticipated May 2019</dd>
+    </dl>
+
+    <dl class="ed_item">
+      <dt class="ed_title">Associate Applied Science - Web Development</dt>
+      <dd>Southwestern Illinois College</dd>
+      <dd>Belleville, IL</dd>
+      <dd class="ed_date">August 2015 - anticipated May 2019</dd>
+    </dl>
+  </div>
+</section>
+
+<section id="work">
+  <h2>Work Experience</h2>
+
+  <div class="work_region">
+    <dl class="work_item">
+      <dt class="work_title">3 Years Customer Service</dt>
+	  <dd>- consistently provided quality guest service
+	    <br>- resolved complaints professionally
+	    <br>- memorized menu items and ingredients
+	    <br>- found ways to improve the service positions
+	    <br>- proved flexibility in adapting to different tasks
+	  </dd>
+      <dd class="work_infobar">
+	    <span class="w_info-company">Fazoli's</span>
+	    <span class="w_info-location">Fairview Heights, IL</span>
+	    <span class="w_info-date">May 2015 - present</span>
+      </dd>
+    </dl>
+
+    <dl class="work_item">
+      <dt class="work_title">3 Months Food Preparation</dt>
+      <dd>- kept high standards in a fast-paced environment
+	    <br>- communicated clearly with associates
+		<br>- followed procedures for safe food preparation
+		<br>- regularly utilized problem solving skills
+	  </dd>
+      <dd class="work_infobar">
+	    <span class="w_info-company">Steak 'N Shake</span>
+	    <span class="w_info-location">O'Fallon, IL</span>
+	    <span class="w_info-date">May 2015 - Aug 2015</span>
+      </dd>
+    </dl>
+
+    <dl class="work_item">
+      <dt class="work_title">2 Months Customer Service</dt>
+      <dd>- took initiative to help the holidays run smoothly
+	    <br>- developed skills for interacting with guests
+	  </dd>
+      <dd class="work_infobar">
+	    <span class="w_info-company">Toys"R"Us</span>
+	    <span class="w_info-location">Fairview Heights, IL</span>
+	    <span class="w_info-date">Oct 2014 - Dec 2014</span>
+      </dd>
+    </dl>
+  </div>  
+</section>
+
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="contact_region">
+  	<p class="cn_socials">
+	  <a class="cn_social_link" target="_blank" href="https://www.linkedin.com/in/alexander-rice-706b7013b/"><img class="cn_social_icon" src="assets/icon-linkedin.png"></a>
+	  <a class="cn_social_link" target="_blank" href="https://github.com/AlexRiceAITP/"><img class="pf_social_icon" src="assets/icon-github.svg"></a>
+	  <span class="cn_email">alexanderrice97@gmail.com</span>
+	</p>
+  </div>
+</section>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="assets/portfolio.js"></script>
+</body>
+</html>

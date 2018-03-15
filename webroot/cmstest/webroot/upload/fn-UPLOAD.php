@@ -1,6 +1,6 @@
 <?php
   if (isset($_GET['action']) && $_GET['action'] == 'success') {
-	echo 'Success! You can view <a href="'.$_GET['path'].'">your submission</a> or upload another file below!';
+	  echo 'Success! You can view <a href="'.$_GET['path'].'" target="_blank">your submission</a> or upload another file below!';
   }
 
   if(isset($_POST['submission'])){
