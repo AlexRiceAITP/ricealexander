@@ -27,10 +27,15 @@ for (let i = 0; i < skills.length; i++) {
 
 
 // table of contents box code
-const sections = ['profile', 'education', 'work', 'skills', 'projects', 'contact'];
+const sections = ['profile', 'skills', 'projects', 'education', 'work', 'contact'];
 const keysects = $('.key li');
 
-$(window).scroll(function() {  
+keyCode();
+$(window).scroll(function() {
+  keyCode();
+});
+
+function keyCode() {  
   ///  build an array of where each section is located
   var heights = [];
   for (let i = 0; i < sections.length; i++)
@@ -45,6 +50,9 @@ $(window).scroll(function() {
 	else
 	  keysects[i].className = "";
   }
+  
+  if (section == 'profile') $('.key').hide();
+  else $('.key').show();
     
   
   function getSection() {
@@ -52,14 +60,14 @@ $(window).scroll(function() {
     for (let i = sections.length -1; i >= 0; i--)
       if (pos >= heights[i]) return sections[i];
   }
-});
+}
 
 
 // projects functionality
 var projects = {
   head2hand: {
 	title: "Head&nbsp;2&nbsp;Hand Literary&nbsp;Magazine",
-	semester: "Fall 2017 - current",
+	date: "Aug 2017 - current",
 	img: "assets/thumb-head2hand.png",
 	github: false,
 	url: [
@@ -71,7 +79,7 @@ var projects = {
   },
   stcchs: {
 	title: "St&nbsp;Clair&nbsp;County Historical&nbsp;Society",
-	semester: "Spring 2017 - Fall 2017",
+	date: "May 2016 - Nov 2016",
 	img: "assets/thumb-stcchs.png",
 	github: false,
 	url: [
@@ -83,7 +91,7 @@ var projects = {
   },
   swicaitp: {
 	title: "SWIC&nbsp;AITP Club&nbsp;Website",
-	semester: "Spring 2017 - Summer 2017",
+	date: "Feb 2017 - Jan 2018",
 	img: "assets/thumb-swicaitp.png",
 	github: false,
 	url: [
@@ -93,7 +101,7 @@ var projects = {
   },
   chatskin: {
 	title: "Chat&nbsp;Skin Generator",
-	semester: "Spring 2018",
+	date: "Apr 2017; Jan 2018",
 	img: "assets/thumb-skingentr.png",
 	github: true,
 	url: [
@@ -104,7 +112,7 @@ var projects = {
   },
   minesweep: {
 	title: "Minesweeper",
-	semester: "Summer 2017 - Spring 2018",
+	date: "Sept 2017 - Jan 2018",
 	img: "assets/thumb-minesweep.png",
 	github: true,
 	url: [
@@ -115,7 +123,7 @@ var projects = {
   },
   patterns: {
 	title: "CSS3&nbsp;Pattern Gallery",
-	semester: "Spring 2015 - Spring 2018",
+	date: "Nov 2014 - Feb 2018",
 	img: "assets/thumb-patterngal.png",
 	github: true,
 	url: [
@@ -139,7 +147,7 @@ function launchModal(project) {
 
     content += '\
 	  <h2 class="modal_title">'+ dir.title +'</h2>\
-      <p class="modal_semester">'+ dir.semester +'</p>\
+      <p class="modal_semester">'+ dir.date +'</p>\
       <img class="modal_img" src="'+ dir.img + '">\
       <div class="modal_content">'+ dir.content +'</div>\
 	  <div class="modal_links">\
