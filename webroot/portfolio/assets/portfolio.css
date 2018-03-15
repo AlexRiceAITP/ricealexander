@@ -248,6 +248,7 @@ html, body, #profile { height: 100%;}
   display: inline-block;
   margin: 10px;
   padding: 10px;
+  vertical-align: top;
   width:400px;}
 
 .ed_complete {
@@ -261,7 +262,7 @@ html, body, #profile { height: 100%;}
 .work_item dd {
   color: #6f8fad;
   margin: 0;
-  padding-left: 2.5em;}
+  padding-left: 1em;}
 
 .ed_title,
 .work_title {
@@ -269,8 +270,23 @@ html, body, #profile { height: 100%;}
   padding-bottom: 5px;}
 
 .ed_date,
-.work_date {
+.work_infobar {
   padding-top: 5px;}
+
+#work .work_infobar {
+    padding-left: 0;
+    color: #4d6880;
+	font-size: 10pt;
+	text-transform: uppercase;
+	padding-top: 15px;
+}
+
+.work_infobar span {
+  padding:0 5px;
+}
+.w_info-company {
+  font-weight: bold;
+}
 
 #work {
   background: linear-gradient(356deg, #1f3346 72.5%, transparent 72.6%), linear-gradient(11deg, #2a4156 65%, transparent 65.1%), linear-gradient(356deg, #2a4156 80%, transparent 80.1%);
