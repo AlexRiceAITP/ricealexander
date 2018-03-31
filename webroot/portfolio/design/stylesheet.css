@@ -1,0 +1,30 @@
+body {
+   color: #475156;
+   background-color: #f7f7f7;
+   font-family: 'Muli', Helvetica, sans-serif;
+   margin: 0;}
+
+h1 {
+   background-color: #FFF;
+   border-bottom: 2px solid #fea66e;
+   margin: 0;
+   padding: 10px 20px;}
+
+nav {
+   background: linear-gradient(90deg, #efefef 15px, #f4f4f4 15px, #f4f4f4 30px);
+   background-size: 30px 30px;
+   color: #c0ccd2;
+   padding: 4px 16px;}
+
+nav a {
+   color: #6e94a7;
+   text-decoration: none;}
+
+nav a:hover {
+   color: #ffba8f;}
+
+section {
+   border-bottom: 1px solid #efefef;
+   margin: 0 auto;
+   max-width: 1500px;
+   padding: 0 20px 5px 20px;}
