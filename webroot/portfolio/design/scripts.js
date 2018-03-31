@@ -82,9 +82,7 @@ function nextModal() {
 
 ///  hide modal when clicked away
 $(document).mouseup(function(e) {
-  //if (!$('.modal').is(e.target)) hideModal();
   if ($(e.target).closest('.modal').length == 0) hideModal();
-  //.closest('.modal')
 });
 
 ///  keyboard events
