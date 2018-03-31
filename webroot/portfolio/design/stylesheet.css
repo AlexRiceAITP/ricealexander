@@ -1,37 +1,39 @@
 body {
-   color: #475156;
-   background-color: #f7f7f7;
-   font-family: 'Muli', Helvetica, sans-serif;
-   margin: 0;}
+  color: #475156;
+  background-color: #f7f7f7;
+  font-family: 'Muli', Helvetica, sans-serif;
+  margin: 0;}
 
 h1 {
-   background-color: #FFF;
-   border-bottom: 2px solid #fea66e;
-   margin: 0;
-   padding: 10px 20px;}
+  background-color: #FFF;
+  border-bottom: 2px solid #fea66e;
+  margin: 0;
+  padding: 10px 20px;}
+
+h2 {
+  padding-left: 20px;}
 
 nav {
-   background: linear-gradient(90deg, #efefef 15px, #f4f4f4 15px, #f4f4f4 30px);
-   background-size: 30px 30px;
-   color: #c0ccd2;
-   padding: 4px 16px;}
+  background: linear-gradient(90deg, #efefef 15px, #f4f4f4 15px, #f4f4f4 30px);
+  background-size: 30px 30px;
+  color: #c0ccd2;
+  padding: 4px 16px;}
 
 nav a {
-   color: #6e94a7;
-   text-decoration: none;}
+  color: #6e94a7;
+  text-decoration: none;}
 
 nav a:hover {
-   color: #ffba8f;}
+  color: #ffba8f;}
 
 section {
-   border-bottom: 1px solid #efefef;
-   margin: 0 auto;
-   max-width: 1500px;
-   padding: 0 20px 5px 20px;}
+  border-bottom: 1px solid #efefef;
+  margin: 0 auto;
+  padding: 0 20px 5px 20px;
+  max-width:1500px;}
 
 
-/* Project Modals */
-
+/* Graphic Modals */
 body .modal_active {
   display:flex;}
 
@@ -50,7 +52,7 @@ body .modal_active {
   border-radius: 8px;
   margin: auto;
   position: relative;
-  height:500px; /*width:400px;*/ width:820px;}
+  height:500px; width:820px;}
 
 .modal_x {
   border-radius: 15px;
@@ -68,7 +70,8 @@ body .modal_active {
   opacity: .5;}
 
 .modal_title {
-  font-size: 16pt;}
+  font-size: 16pt;
+  padding:0;}
 
 .modal_title:before {
   display: none;}
@@ -80,16 +83,14 @@ body .modal_active {
   width:420px;}
 
 .modal .square {
-top:auto;
-width: 400px;
-left:10px;}
+  top:auto; left:10px;
+  width:400px;}
 
 .modal_img.pair img {
-width:100%; height:50%}
+  height:50%; width:100%;}
 
 .modal_content .pair img {
-    width:50%;
-}
+  width:50%;}
 
 .modal_content {
   color: #1f3346;
@@ -113,7 +114,7 @@ width:100%; height:50%}
   text-decoration: none;}
 
 a.modal_button {
-color: white;}
+  color: white;}
 
 .modal_button:hover {
   background-color: #30b0ea;}
