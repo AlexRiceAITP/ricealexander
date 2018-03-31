@@ -28,3 +28,80 @@ section {
    margin: 0 auto;
    max-width: 1500px;
    padding: 0 20px 5px 20px;}
+
+
+/* Project Modals */
+
+body .modal_active {
+  display:flex;}
+
+.overlay_up {
+  overflow: hidden;}
+
+.modal_overlay {
+  background: repeating-linear-gradient(135deg, rgba(24,31,39,0.6), rgba(24,31,39,0.6) 35px, rgba(32,40,48,0.6) 35px, rgba(32,40,48,0.6) 70px);
+  display: none;
+  position: fixed;
+  top:0; right:0; bottom:0; left:0;
+  z-index: 2;}
+  
+.modal {
+  background-color: white;
+  border-radius: 8px;
+  margin: auto;
+  position: relative;
+  height:500px; width:400px;}
+
+.modal_x {
+  border-radius: 15px;
+  cursor: pointer;
+  display: block;
+  font-size: 30px;
+  line-height: 30px;
+  position: absolute;
+  top:7px; right:7px;
+  text-align: center;
+  transition: .2s;
+  height:30px; width:30px;}
+
+.modal_x:hover {
+  opacity: .5;}
+
+.modal_title {
+  font-size: 16pt;
+  padding: 0 15px;}
+
+.modal_title:before {
+  display: none;}
+
+.modal_img {
+  clip: rect(0px,400px,50px,0px);
+  position: absolute;
+  width:100%;}
+
+.modal_content {
+  color: #1f3346;
+  margin: 85px 15px 10px 15px;}
+
+.modal_content a {
+  color: #359ECF;
+  text-decoration: none;}
+
+.modal_content a:hover {
+  color: #30b0ea;}
+
+.modal_button {
+  background-color: #359ECF;
+  border-radius: 4px;
+  color: white;
+  display: inline-block;
+  line-height: 40px;
+  margin: 0 2px;
+  padding: 0px 30px;
+  text-decoration: none;}
+
+a.modal_button {
+color: white;}
+
+.modal_button:hover {
+  background-color: #30b0ea;}
