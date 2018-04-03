@@ -15,7 +15,7 @@ body {
 
 #gear svg {
   animation: rotate 1s linear infinite;
-  width:100%;}
+  height:350px;}
 
 
 @keyframes rotate {
