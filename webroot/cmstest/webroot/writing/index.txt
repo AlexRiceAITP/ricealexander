@@ -1,7 +1,0 @@
-  <div id="newsfeed">
-    <div class="container">
-      <div class="stub-content">
-        <h2 class="feed-title">Writing</h2>
-      </div>
-    </div>
-  </div>
