@@ -80,7 +80,7 @@ html, body, #profile { height: 100%;}
   max-width: 920px;}
 
 .pf_picture {
-  background: linear-gradient(180deg, transparent 50%, #1f3346 50%), linear-gradient(90deg, #1f3346 50%, transparent 50%), #2a4156;
+  background: linear-gradient(0deg, transparent 50%, #cfd9e0 50%), #f3f7fb;
   background-size: 4px 4px;
   border-radius: 50%;
   margin-right: 30px;
@@ -121,11 +121,6 @@ html, body, #profile { height: 100%;}
 .cn_social_icon:hover {
   transform: scale(1.2,1.2);
   transition: .4s;}
-
-.pf_arrowbar {
-  position: absolute;
-  bottom:0;
-  width:100%;}
 
 .pf_arrow {
   background: linear-gradient(135deg, transparent 50%, #6989a4 50.1%);
@@ -176,6 +171,9 @@ html, body, #profile { height: 100%;}
 
   .pf_picture img {
     height:300px;}
+
+  .pf_arrowbar {
+    display: none;}
 }
 
 
@@ -212,6 +210,11 @@ html, body, #profile { height: 100%;}
   
   .profile_region {
   margin: auto;}
+
+  .pf_arrowbar {
+    position: absolute;
+    bottom:0;
+    width:100%;}
 }
 
 @media (max-width: 800px) {
