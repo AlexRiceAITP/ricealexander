@@ -1,0 +1,7 @@
+AddDefaultCharset utf-8
+
+# Redirects
+RedirectMatch 301 ^(/lisa_musick|/freelance/lisa_musick|/freelance/lisamusick)/?$ "http://ricealexander.com/freelance/lisa musick/"
+
+# Disable Directory Browsing
+Options -Indexes
