@@ -1,7 +1,14 @@
 AddDefaultCharset utf-8
+RewriteEngine On
+
+# www to non-www
+RewriteCond %{HTTP_HOST} ^www\. [NC]
+RewriteRule ^(.*)$ http://ricealexander.com/$1 [R=301,L]
 
 # Redirects
+RedirectMatch 302 ^/?$ http://ricealexander.com/portfolio/
 RedirectMatch 301 ^(/lisa_musick|/freelance/lisa_musick|/freelance/lisamusick)/?$ "http://ricealexander.com/freelance/lisa musick/"
+
 
 # Disable Directory Browsing
 Options -Indexes
